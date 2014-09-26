@@ -14,7 +14,7 @@ public class HeroController : MonoBehaviour {
 	public Transform groundCheck;
 	float groundRadius = 0.2f;
 	public LayerMask  whatIsGround;
-	public float jumpForce = 700;
+	public float jumpForce = 150;
 
 	// Use this for initialization
 	void Start () {
@@ -34,10 +34,17 @@ public class HeroController : MonoBehaviour {
 		} else if (move < 0 && facingRight) {
 			Flip ();
 		}
+
+		Physics2D.IgnoreLayerCollision( LayerMask.NameToLayer("Player"), LayerMask.NameToLayer("Platform"),!grounded || rigidbody2D.velocity.y > 0);
+
+		float vertical = Input.GetAxis ("Vertical");
+		if (grounded && vertical < -0.05) {
+			Physics2D.IgnoreLayerCollision( LayerMask.NameToLayer("Player"), LayerMask.NameToLayer("Platform"), vertical < -0.05);
+		}
 	}
 
 	void Update(){
-		if (grounded && Input.GetKeyDown (KeyCode.Space)) {
+		if (grounded && Input.GetAxis ("Jump") > 0) {
 			anim.SetBool("Ground", false);
 			rigidbody2D.AddForce(new Vector2(0,jumpForce));
 		}
