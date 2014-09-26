@@ -5,10 +5,7 @@ public class GunController : MonoBehaviour {
 	public Sprite angle45;
 	public Sprite angle90;
 	public Sprite angle135;
-	public Sprite angle180;
-	public Sprite angle225;
-	public Sprite angle270;
-	public Sprite angle315;
+	public Sprite angle180; 	
 	public Sprite angle360;
 	SpriteRenderer spriteRend;
 	Animator gunAngle;
@@ -29,15 +26,19 @@ public class GunController : MonoBehaviour {
 		float angle = Vector2.Angle (Vector2.up, relmousepos);  //Angle calculation
 		if (relmousepos.x > 0)
 			angle = 360-angle;
-		gunAngle.SetFloat ("MouseAngle", angle);
+//		gunAngle.SetFloat ("MouseAngle", angle);
 		Debug.Log (angle);
-//		if (angle <= 360 && angle > 300) {
-//			spriteRend.sprite = angle45;
-//			Debug.Log (spriteRend.sprite.name);
-//		} else if (angle < 300 && angle >= 240) {
-//			spriteRend.sprite = angle90;
-//			Debug.Log (spriteRend.sprite.name);
-//		}
+		if (angle <= 325 && angle > 305) {
+			spriteRend.sprite = angle45;
+		} else if (angle < 280 && angle >= 260) {
+			spriteRend.sprite = angle90;
+		} else if (angle > 350) {
+			spriteRend.sprite = angle360;
+		}else if (angle < 235 && angle >= 215) {
+			spriteRend.sprite = angle135;
+		}else if (angle < 190 && angle >= 170) {
+			spriteRend.sprite = angle180;
+		}
 	}
 
 }
