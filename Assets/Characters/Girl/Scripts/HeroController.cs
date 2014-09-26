@@ -3,10 +3,10 @@ using System.Collections;
 
 public class HeroController : MonoBehaviour {
 
-	public float maxSpeed = 5;
+	public static float MaxSpeed = 5;
 	public Animator legAnimator = null;
 	public Animator upperBodyAnimator = null;
-	bool facingRight = true;
+	public static bool FacingRight = true;
 
 	Animator anim;
 
@@ -28,10 +28,10 @@ public class HeroController : MonoBehaviour {
 //		anim.SetFloat ("vSpeed", rigidbody2D.velocity.y);
 		float move = Input.GetAxis ("Horizontal");
 		SetRunningSpeed(Mathf.Abs (move));
-		rigidbody2D.velocity = new Vector2 (move * maxSpeed, rigidbody2D.velocity.y); 
-		if (move > 0 && !facingRight) {
+		rigidbody2D.velocity = new Vector2 (move * MaxSpeed, rigidbody2D.velocity.y); 
+		if (move > 0 && !FacingRight) {
 			Flip ();
-		} else if (move < 0 && facingRight) {
+		} else if (move < 0 && FacingRight) {
 			Flip ();
 		}
 
@@ -51,7 +51,7 @@ public class HeroController : MonoBehaviour {
 	}
 
 	void Flip(){
-		facingRight = !facingRight;
+		FacingRight = !FacingRight;
 		Vector3 theScale = transform.localScale;
 		theScale.x *= -1;
 		transform.localScale = theScale;

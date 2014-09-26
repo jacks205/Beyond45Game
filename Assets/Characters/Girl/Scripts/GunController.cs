@@ -8,6 +8,17 @@ public class GunController : MonoBehaviour {
 	public Sprite angle135;
 	public Sprite angle180; 	
 	public Sprite angle360;
+
+	public Transform fireAngle90;
+	public Transform fireAngle45;
+	public Transform fireAngle360;
+	public Transform fireAngle135;
+	public Transform fireAngle180;
+
+	public Rigidbody2D bullet;
+
+	public float bulletSpeed = 20f;
+	Transform currentSelectedFiringPosition;
 	SpriteRenderer spriteRend;
 	Animator gunAngle;
 
@@ -16,32 +27,75 @@ public class GunController : MonoBehaviour {
 	void Start () {
 		spriteRend = GetComponent<SpriteRenderer> ();
 		gunAngle = GetComponent<Animator> ();
+		currentSelectedFiringPosition = fireAngle90;
 	}
 	
 	// Update is called once per frame
 	void Update () {
+		FollowJoystick ();
+	}
+
+
+	void FollowJoystick(){
 		float joystick4thAxis = Input.GetAxis ("Mouse X");
 		float joystick5thAxis = Input.GetAxis ("Mouse Y");
-//		Debug.Log ("X: " + joystick5thAxis + " Y: " + joystick6thAxis);
+		//		Debug.Log ("X: " + joystick5thAxis + " Y: " + joystick6thAxis);
 		if (joystick4thAxis <= 0.009 && joystick5thAxis <= 0.009) {
 			spriteRend.sprite = angleDef;
+			HeroController.MaxSpeed = 3f;
+			currentSelectedFiringPosition = fireAngle90;
+			CheckToShoot (90, 0);
 		} 
-		else if ((joystick4thAxis <= 0.09 && joystick4thAxis > 0.05) && (joystick5thAxis <= -0.05 && joystick5thAxis > -0.09)) {
+		else if (HeroController.FacingRight && ((joystick4thAxis <= 0.09 && joystick4thAxis > 0.05) && (joystick5thAxis <= -0.05 && joystick5thAxis > -0.09))) {
 			spriteRend.sprite = angle45;
-			Debug.Log ("Angle45");
+			HeroController.MaxSpeed = 1.5f;
+			currentSelectedFiringPosition = fireAngle45;
+			CheckToShoot (45, 35);
 		} 
-		else if ((joystick4thAxis > 0.08) && (joystick5thAxis <= 0.05 && joystick5thAxis > -0.05)) {
+		else if (HeroController.FacingRight && ((joystick4thAxis > 0.08) && (joystick5thAxis <= 0.05 && joystick5thAxis > -0.05))) {
 			spriteRend.sprite = angle90;
-			Debug.Log ("Angle90");
-		} else if ((joystick4thAxis <= 0.05 && joystick4thAxis > -0.05) && (joystick5thAxis < -0.08)) {
+			HeroController.MaxSpeed = 1.5f;
+			currentSelectedFiringPosition = fireAngle90;
+			CheckToShoot (90, 0);
+		} else if (HeroController.FacingRight && ((joystick4thAxis <= 0.05 && joystick4thAxis > -0.05) && (joystick5thAxis < -0.08))) {
 			spriteRend.sprite = angle360;
-			Debug.Log ("Angle360");
-		}else if ((joystick4thAxis <= 0.09 && joystick4thAxis > 0.05) && (joystick5thAxis <= 0.09 && joystick5thAxis > 0.05)) {
+			HeroController.MaxSpeed = 1.5f;
+			currentSelectedFiringPosition = fireAngle360;
+			CheckToShoot (360, 90);
+		}else if (HeroController.FacingRight && ((joystick4thAxis <= 0.09 && joystick4thAxis > 0.05) && (joystick5thAxis <= 0.09 && joystick5thAxis > 0.05))) {
 			spriteRend.sprite = angle135;
-			Debug.Log ("Angle135");
-		}else if ((joystick4thAxis <= 0.05 && joystick4thAxis > -0.05) && (joystick5thAxis > 0.08)) {
+			HeroController.MaxSpeed = 1.5f;
+			currentSelectedFiringPosition = fireAngle135;
+			CheckToShoot (135,-35);
+		}else if (HeroController.FacingRight && ((joystick4thAxis <= 0.05 && joystick4thAxis > -0.05) && (joystick5thAxis > 0.08))) {
 			spriteRend.sprite = angle180;
-			Debug.Log ("Angle180");
+			HeroController.MaxSpeed = 1.5f;
+			currentSelectedFiringPosition = fireAngle180;
+			CheckToShoot (180,-90);
+		}
+
+	}
+
+	void CheckToShoot(float spriteAngle, float bulletAngle){
+		float fire1 = Input.GetAxis ("Fire1");
+		if (fire1 == 1)
+			Fire (spriteAngle, bulletAngle);
+	}
+
+	void Fire(float spriteAngle, float bulletAngle){
+		if(currentSelectedFiringPosition != null){
+			if(HeroController.FacingRight)
+			{
+				// ... instantiate the rocket facing right and set it's velocity to the right. 
+				Rigidbody2D bulletInstance = Instantiate(bullet, currentSelectedFiringPosition.position, Quaternion.Euler(new Vector3(0,0,-spriteAngle))) as Rigidbody2D;
+				bulletInstance.velocity = new Vector2(bulletSpeed, bulletAngle);
+			}
+			else
+			{
+				// Otherwise instantiate the rocket facing left and set it's velocity to the left.
+				Rigidbody2D bulletInstance = Instantiate(bullet, transform.position, Quaternion.Euler(new Vector3(0,0,spriteAngle))) as Rigidbody2D;
+				bulletInstance.velocity = new Vector2(-bulletSpeed, bulletAngle);
+			}
 		}
 	}
 
