@@ -1,0 +1,213 @@
+fileFormatVersion: 2
+guid: 5dd4d0180b603e043ac815ff9c7255dd
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: rebel_soldier_death
+    21300002: rebel_soldier_death_0
+    21300004: rebel_soldier_death_1
+    21300006: rebel_soldier_death_2
+    21300008: rebel_soldier_death_3
+    21300010: rebel_soldier_death_4
+    21300012: rebel_soldier_death_5
+    21300014: rebel_soldier_death_6
+    21300016: rebel_soldier_death_7
+    21300018: rebel_soldier_death_8
+    21300020: rebel_soldier_death_10
+    21300022: rebel_soldier_death_13
+    21300024: rebel_soldier_death_15
+    21300026: rebel_soldier_death_16
+    21300028: rebel_soldier_death_17
+    21300030: rebel_soldier_death_18
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 4096
+  textureSettings:
+    filterMode: -1
+    aniso: 1
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: rebel_soldier_death_0
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 436
+        width: 28
+        height: 42
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: rebel_soldier_death_1
+      rect:
+        serializedVersion: 2
+        x: 57
+        y: 436
+        width: 29
+        height: 43
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: rebel_soldier_death_2
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 436
+        width: 31
+        height: 43
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: rebel_soldier_death_3
+      rect:
+        serializedVersion: 2
+        x: 137
+        y: 436
+        width: 34
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: rebel_soldier_death_4
+      rect:
+        serializedVersion: 2
+        x: 181
+        y: 436
+        width: 39
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: rebel_soldier_death_5
+      rect:
+        serializedVersion: 2
+        x: 231
+        y: 436
+        width: 42
+        height: 44
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: rebel_soldier_death_6
+      rect:
+        serializedVersion: 2
+        x: 283
+        y: 436
+        width: 43
+        height: 41
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: rebel_soldier_death_7
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 436
+        width: 47
+        height: 42
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: rebel_soldier_death_8
+      rect:
+        serializedVersion: 2
+        x: 395
+        y: 436
+        width: 46
+        height: 44
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: rebel_soldier_death_10
+      rect:
+        serializedVersion: 2
+        x: 452
+        y: 436
+        width: 47
+        height: 45
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: rebel_soldier_death_13
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 436
+        width: 47
+        height: 43
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: rebel_soldier_death_15
+      rect:
+        serializedVersion: 2
+        x: 571
+        y: 436
+        width: 46
+        height: 33
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: rebel_soldier_death_16
+      rect:
+        serializedVersion: 2
+        x: 628
+        y: 436
+        width: 46
+        height: 25
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: rebel_soldier_death_17
+      rect:
+        serializedVersion: 2
+        x: 686
+        y: 436
+        width: 46
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: rebel_soldier_death_18
+      rect:
+        serializedVersion: 2
+        x: 744
+        y: 436
+        width: 47
+        height: 18
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+  spritePackingTag: 
+  userData: 

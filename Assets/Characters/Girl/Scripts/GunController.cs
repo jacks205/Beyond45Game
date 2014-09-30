@@ -15,23 +15,29 @@ public class GunController : MonoBehaviour {
 	public Transform fireAngle135;
 	public Transform fireAngle180;
 
-	public Rigidbody2D bullet;
+	public Transform bullet;
 
-	public float bulletSpeed = 20f;
+	public float bulletSpeed = 2f;
+	public float shootingRate = 0.25f;
 	Transform currentSelectedFiringPosition;
 	SpriteRenderer spriteRend;
 	Animator gunAngle;
-
+	float shootCooldown;
 
 	// Use this for initialization
 	void Start () {
 		spriteRend = GetComponent<SpriteRenderer> ();
 		gunAngle = GetComponent<Animator> ();
 		currentSelectedFiringPosition = fireAngle90;
+		shootCooldown = 0f;
 	}
 	
 	// Update is called once per frame
 	void Update () {
+		if (shootCooldown > 0)
+		{
+			shootCooldown -= Time.deltaTime;
+		}
 		FollowJoystick ();
 	}
 
@@ -78,8 +84,10 @@ public class GunController : MonoBehaviour {
 
 	void CheckToShoot(float spriteAngle, float bulletAngle){
 		float fire1 = Input.GetAxis ("Fire1");
-		if (fire1 == 1)
+		if (CanAttack && fire1 == 1) {
+			shootCooldown = shootingRate;
 			Fire (spriteAngle, bulletAngle);
+		}
 	}
 
 	void Fire(float spriteAngle, float bulletAngle){
@@ -87,14 +95,14 @@ public class GunController : MonoBehaviour {
 			if(HeroController.FacingRight)
 			{
 				// ... instantiate the rocket facing right and set it's velocity to the right. 
-				Rigidbody2D bulletInstance = Instantiate(bullet, currentSelectedFiringPosition.position, Quaternion.Euler(new Vector3(0,0,-spriteAngle))) as Rigidbody2D;
-				bulletInstance.velocity = new Vector2(bulletSpeed, bulletAngle);
+				Transform bulletInstance = Instantiate(bullet, currentSelectedFiringPosition.position, Quaternion.Euler(new Vector3(0,0,-spriteAngle))) as Transform;
+				bulletInstance.rigidbody2D.velocity = new Vector2(bulletSpeed, bulletAngle);
 			}
 			else
-			{
+			{ 
 				// Otherwise instantiate the rocket facing left and set it's velocity to the left.
-				Rigidbody2D bulletInstance = Instantiate(bullet, transform.position, Quaternion.Euler(new Vector3(0,0,spriteAngle))) as Rigidbody2D;
-				bulletInstance.velocity = new Vector2(-bulletSpeed, bulletAngle);
+				Transform bulletInstance = Instantiate(bullet, transform.position, Quaternion.Euler(new Vector3(0,0,spriteAngle))) as Transform;
+				bulletInstance.rigidbody2D.velocity = new Vector2(-bulletSpeed, bulletAngle);
 			}
 		}
 	}
@@ -119,6 +127,14 @@ public class GunController : MonoBehaviour {
 			spriteRend.sprite = angle135;
 		}else if (angle < 190 && angle >= 170) {
 			spriteRend.sprite = angle180;
+		}
+	}
+
+	public bool CanAttack
+	{
+		get
+		{
+			return shootCooldown <= 0f;
 		}
 	}
 
