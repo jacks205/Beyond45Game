@@ -3,7 +3,7 @@ using System.Collections;
 
 public class HeroController : MonoBehaviour {
 
-	public static float MaxSpeed = 5;
+	public static float MaxSpeed = 3;
 	public Animator legAnimator = null;
 	public Animator upperBodyAnimator = null;
 	public static bool FacingRight = true;

@@ -4,6 +4,8 @@ using System.Collections;
 public class GunController : MonoBehaviour {
 	public static int BULLET_DAMAGE = 100;
 
+	public bool usingController = true;
+
 	public Sprite angleDef;
 	public Sprite angle45;
 	public Sprite angle90;
@@ -40,8 +42,42 @@ public class GunController : MonoBehaviour {
 		{
 			shootCooldown -= Time.deltaTime;
 		}
-		FollowJoystick ();
+		if (usingController)
+			FollowJoystick ();
+		else
+			FollowMouse ();		
 	}
+
+    void FollowMouse(){
+        Vector2 mouse = Camera.main.ScreenToViewportPoint(Input.mousePosition);        //Mouse position
+        Vector3 objpos = Camera.main.WorldToViewportPoint (transform.position);        //Object position on screen
+        Vector2 relobjpos = new Vector2(objpos.x - 0.5f,objpos.y - 0.5f);           //Set coordinates relative to object
+        Vector2 relmousepos = new Vector2 (mouse.x - 0.5f,mouse.y - 0.5f) - relobjpos;
+        float angle = Vector2.Angle (Vector2.up, relmousepos);  //Angle calculation
+        if (relmousepos.x > 0)
+            angle = 360-angle;
+        Debug.Log (angle);
+        if (angle <= 325 && angle > 305) {
+            spriteRend.sprite = angle45;
+            currentSelectedFiringPosition = fireAngle45;
+            CheckToShoot (45, 45);
+        } else if (angle < 280 && angle >= 260) {
+            spriteRend.sprite = angle90;
+            currentSelectedFiringPosition = fireAngle90;
+            CheckToShoot (90, 0);
+        } else if (angle > 350) {
+            spriteRend.sprite = angle360;
+            currentSelectedFiringPosition = fireAngle360;
+            CheckToShoot (360, 90);
+        }else if (angle < 235 && angle >= 215) {
+            currentSelectedFiringPosition = fireAngle135;
+            CheckToShoot (135,-45);
+        }else if (angle < 190 && angle >= 170) {
+            spriteRend.sprite = angle180;
+            currentSelectedFiringPosition = fireAngle180;
+            CheckToShoot (180,-90);
+        }
+    }
 
 
 	void FollowJoystick(){
@@ -58,7 +94,7 @@ public class GunController : MonoBehaviour {
 			spriteRend.sprite = angle45;
 			HeroController.MaxSpeed = 1.5f;
 			currentSelectedFiringPosition = fireAngle45;
-			CheckToShoot (45, 35);
+			CheckToShoot (45, 45);
 		} 
 		else if (HeroController.FacingRight && ((joystick4thAxis > 0.08) && (joystick5thAxis <= 0.05 && joystick5thAxis > -0.05))) {
 			spriteRend.sprite = angle90;
@@ -74,7 +110,7 @@ public class GunController : MonoBehaviour {
 			spriteRend.sprite = angle135;
 			HeroController.MaxSpeed = 1.5f;
 			currentSelectedFiringPosition = fireAngle135;
-			CheckToShoot (135,-35);
+			CheckToShoot (135,-45);
 		}else if (HeroController.FacingRight && ((joystick4thAxis <= 0.05 && joystick4thAxis > -0.05) && (joystick5thAxis > 0.08))) {
 			spriteRend.sprite = angle180;
 			HeroController.MaxSpeed = 1.5f;
@@ -109,28 +145,7 @@ public class GunController : MonoBehaviour {
 		}
 	}
 
-	void FollowMouse(){
-		Vector2 mouse = Camera.main.ScreenToViewportPoint(Input.mousePosition);        //Mouse position
-		Vector3 objpos = Camera.main.WorldToViewportPoint (transform.position);        //Object position on screen
-		Vector2 relobjpos = new Vector2(objpos.x - 0.5f,objpos.y - 0.5f);           //Set coordinates relative to object
-		Vector2 relmousepos = new Vector2 (mouse.x - 0.5f,mouse.y - 0.5f) - relobjpos;
-		float angle = Vector2.Angle (Vector2.up, relmousepos);  //Angle calculation
-		if (relmousepos.x > 0)
-			angle = 360-angle;
-		//		gunAngle.SetFloat ("MouseAngle", angle);
-		Debug.Log (angle);
-		if (angle <= 325 && angle > 305) {
-			spriteRend.sprite = angle45;
-		} else if (angle < 280 && angle >= 260) {
-			spriteRend.sprite = angle90;
-		} else if (angle > 350) {
-			spriteRend.sprite = angle360;
-		}else if (angle < 235 && angle >= 215) {
-			spriteRend.sprite = angle135;
-		}else if (angle < 190 && angle >= 170) {
-			spriteRend.sprite = angle180;
-		}
-	}
+	
 
 	public bool CanAttack
 	{
