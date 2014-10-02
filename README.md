@@ -7,23 +7,23 @@ CPSC 340 2d Side Scroller Shooter
 
 Contents
 -------------
-1. [Game Overview] (#Gameplay Overview)
-2. [Gameplay Mechanics] (#Gameplay Mechanics)
-3. [Controls] (#Controls)
-4. [Interface] (#Interface)
-5. [Menu and Screen Descriptions] (#Menu and Screen Descriptions)
-6. [Game World] (#Game World)
-7. [Levels] (#Levels)
-8. [Game Progression] (#Game Progression)
-9. [Characters] (#Characters)
-10. [Enemies] (#Enemies)
-11. [Weapons] (#Weapons)
-12. [Items] (#Items)
-13. [Script] (#Script)
-14. [Scoring] (#Scoring)
-15. [Bonuses] (#Bonuses)
-16. [Design Notes] (#Design Notes)
-17. [Future Features] (#Future Features)
+1. [Game Overview] (#gameplayoverview)
+2. [Gameplay Mechanics] (#gameplaymechanics)
+3. [Controls] (#controls)
+4. [Interface] (#interface)
+5. [Menu and Screen Descriptions] (#menu)
+6. [Game World] (#gameworld)
+7. [Levels] (#levels)
+8. [Game Progression] (#progression)
+9. [Characters] (#characters)
+10. [Enemies] (#enemies)
+11. [Weapons] (#weapons)
+12. [Items] (#items)
+13. [Script] (#script)
+14. [Scoring] (#scoring)
+15. [Bonuses] (#bonuses)
+16. [Design Notes] (#notes)
+17. [Future Features] (#futurefeatures)
 
 
 Version History
@@ -33,36 +33,36 @@ Version | Draft | Description
 -----------|--------|-----------------
 Draft | 10/2/2014 | Initial Draft
 
-##Gameplay Overview
+##<a name="gameplayoverview"></a>Gameplay Overview
 
-##Gameplay Mechanics
+##<a name="gameplaymechanics"></a>Gameplay Mechanics
 
-##Controls
+##<a name="controls"></a>Controls
 
-##Interface
+##<a name="interface"></a>Interface
 
-##Menu and Screen Descriptions
+##<a name="menu"></a>Menu and Screen Descriptions
 
-##Game World
+##<a name="gameworld"></a>Game World
 
-##Levels
+##<a name="levels"></a>Levels
 
-##Game Progression
+##<a name="progression"></a>Game Progression
 
-##Characters
+##<a name="characters"></a>Characters
 
-##Enemies
+##<a name="enemies"></a>Enemies
 
-##Weapons
+##<a name="weapons"></a>Weapons
 
-##Items
+##<a name="items"></a>Items
 
-##Script
+##<a name="script"></a>Script
 
-##Scoring
+##<a name="scoring"></a>Scoring
 
-##Bonuses
+##<a name="bonuses"></a>Bonuses
 
-##Design Notes
+##<a name="notes"></a>Design Notes
 
-##Future Features
+##<a name="futurefeatures"></a>Future Features
