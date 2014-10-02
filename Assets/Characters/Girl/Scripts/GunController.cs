@@ -2,6 +2,8 @@
 using System.Collections;
 
 public class GunController : MonoBehaviour {
+	public static int BULLET_DAMAGE = 100;
+
 	public Sprite angleDef;
 	public Sprite angle45;
 	public Sprite angle90;

@@ -28,7 +28,7 @@ public class EnemyHealth : MonoBehaviour {
 		Debug.Log (other.gameObject.name);
 		if (other.gameObject.name == "bullet(Clone)") {
 			Destroy (other.gameObject);
-			TakeDamage(50);
+			TakeDamage(GunController.BULLET_DAMAGE);
 		}
 	}
 
