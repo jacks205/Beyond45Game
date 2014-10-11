@@ -15,5 +15,9 @@
 /*.DS_Store
 /*.psd
 
+PixelLandscape/
+2DPlatformController/
+
+
 #Unity3D Generated File On Crash Reports
 sysinfo.txt
