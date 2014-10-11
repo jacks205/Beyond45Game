@@ -44,7 +44,7 @@ public class HeroController2D : MonoBehaviour {
     
     void Update(){
         if (grounded && Input.GetAxis ("Jump") > 0) {
-            anim.SetBool("Ground", false);
+//            anim.SetBool("Ground", false);
             rigidbody2D.AddForce(new Vector2(0,jumpForce));
         }
     }

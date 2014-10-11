@@ -38,11 +38,12 @@ public class GunController2D : MonoBehaviour {
             shootCooldown -= Time.deltaTime;
         if (throwCooldown > 0)
             throwCooldown -= Time.deltaTime;
-        CheckToShoot(); 
+        float controllerDegrees = GetControllerAngle();
+        CheckToShoot(controllerDegrees); 
         CheckToThrow();
     }
 
-    void CheckToShoot(){
+    void CheckToShoot(float gunRotationDegrees){
 
         if (CanAttack && isFiring())
         {
@@ -63,17 +64,41 @@ public class GunController2D : MonoBehaviour {
 
             // Make the weapon shot always towards it
             BulletMove move = shotTransform.gameObject.GetComponent<BulletMove>();
+            Vector2 direction = Vector2.right.Rotate(gunRotationDegrees);
+//            float gunRotationDegreesOpposite = 180 - gunRotationDegrees;
+//            Vector2 oppositeDirection = Vector2.right.Rotate(gunRotationDegreesOpposite);
             if (move != null)
             {
                 if(HeroController2D.FacingRight){
-                    move.direction = this.transform.right; // towards in 2D space is the right of the sprite
+                    SetBulletAngleAndVelocity(shotTransform, move, direction, gunRotationDegrees);
                 }else{
-                    move.direction = -this.transform.right;
-                    FlipBullet(shotTransform);
+//                    SetBulletAngleAndVelocity(shotTransform, move, oppositeDirection, gunRotationDegreesOpposite);
+                    Vector2 angle180 = Vector2.right.Rotate(180f);
+                    SetBulletAngleAndVelocity(shotTransform, move, angle180, 180f);
                 }
                     
             }
         }
+    }
+
+    void SetBulletAngleAndVelocity(Transform obj, BulletMove move, Vector2 direction, float rotation){
+        obj.Rotate(new Vector3(0,0,rotation));
+        move.direction = direction; // towards in 2D space is the right of the sprite
+    }
+
+    float GetControllerAngle(){
+        float joystick4thAxis = Input.GetAxis ("Mouse X") * 10;
+        float joystick5thAxis = Input.GetAxis ("Mouse Y") * 10;
+        Debug.Log("X: " + joystick4thAxis);
+        Debug.Log("Y: " + joystick5thAxis);
+        if (joystick4thAxis <= 0.09 && joystick5thAxis <= 0.09) {
+            return 0;
+        } else if ((joystick4thAxis <= 0.8 && joystick4thAxis >= -.3) && (joystick5thAxis <= -0.5 && joystick5thAxis >= -1)) {
+            return 45;
+        } else if ((joystick4thAxis <= 0.8 && joystick4thAxis >= -.3) && (joystick5thAxis >= 0.5 && joystick5thAxis <= 1)) {
+            return -45;
+        } 
+        return 0;
     }
 
 
@@ -142,4 +167,18 @@ public class GunController2D : MonoBehaviour {
         }
     }
     
+}
+
+public static class Vector2Extension {
+    
+    public static Vector2 Rotate(this Vector2 v, float degrees) {
+        float sin = Mathf.Sin(degrees * Mathf.Deg2Rad);
+        float cos = Mathf.Cos(degrees * Mathf.Deg2Rad);
+        
+        float tx = v.x;
+        float ty = v.y;
+        v.x = (cos * tx) - (sin * ty);
+        v.y = (sin * tx) + (cos * ty);
+        return v;
+    }
 }
