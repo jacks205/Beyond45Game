@@ -86,6 +86,7 @@ Depends on story. Will most likely take place in an exotic location.
 ##<a name="characters"></a>Characters
 
 ##<a name="enemies"></a>Enemies
+Typical bad guy army enemies that are clueless compared to yourself.
 
 ##<a name="weapons"></a>Weapons
 ![Item Drop](Assets/Ideas/item-bomb.gif)
