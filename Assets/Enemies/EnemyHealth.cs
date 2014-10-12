@@ -8,14 +8,14 @@ public class EnemyHealth : MonoBehaviour {
 	public int scoreValue = 10;
 
 
-	Animator anim;
+	public Animator anim;
 	bool isDead;
 
 
 	// Use this for initialization
 	void Start () {
-		anim = GetComponent <Animator> ();
 		currentHealth = startingHealth;
+//        anim = GetComponent<Animator>();
 	}
 	
 	// Update is called once per frame
@@ -26,7 +26,7 @@ public class EnemyHealth : MonoBehaviour {
 	void OnTriggerEnter2D(Collider2D other)
 	{
 		Debug.Log (other.gameObject.name);
-		if (other.gameObject.name == "bullet(Clone)") {
+		if ((other.gameObject.name == "mgBullet(Clone)") && !isDead) {
 			Destroy (other.gameObject);
 			TakeDamage(GunController.BULLET_DAMAGE);
 		}
@@ -38,7 +38,7 @@ public class EnemyHealth : MonoBehaviour {
 			return;
 
 		currentHealth -= amount;
-		
+        Debug.Log(currentHealth);
 		if(currentHealth <= 0)
 		{
 			Death ();
@@ -48,9 +48,9 @@ public class EnemyHealth : MonoBehaviour {
 	void Death ()
 	{
 		isDead = true;
+        anim.SetBool("isDead", true);
+        anim.SetTrigger("Dead");
 
-		anim.SetTrigger ("Dead");
-
-		Destroy (gameObject, 2f);
+		Destroy (this.gameObject, 4f);
 	}
 }

@@ -190,8 +190,8 @@ TextureImporter:
         y: 652
         width: 34
         height: 30
-      alignment: 0
-      pivot: {x: .5, y: .5}
+      alignment: 9
+      pivot: {x: .702819824, y: .454659015}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: hero_soldier_idle_shoot_2
       rect:
@@ -200,8 +200,8 @@ TextureImporter:
         y: 652
         width: 34
         height: 30
-      alignment: 0
-      pivot: {x: .5, y: .5}
+      alignment: 9
+      pivot: {x: .540000021, y: .469999999}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: hero_soldier_idle_shoot_3
       rect:
@@ -210,8 +210,8 @@ TextureImporter:
         y: 652
         width: 44
         height: 30
-      alignment: 0
-      pivot: {x: .5, y: .5}
+      alignment: 9
+      pivot: {x: .599365592, y: .468770355}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: hero_soldier_idle_shoot_4
       rect:
@@ -220,8 +220,8 @@ TextureImporter:
         y: 652
         width: 34
         height: 30
-      alignment: 0
-      pivot: {x: .5, y: .5}
+      alignment: 9
+      pivot: {x: .550000012, y: .49000001}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: hero_soldier_up_shoot_1
       rect:
@@ -230,8 +230,8 @@ TextureImporter:
         y: 618
         width: 34
         height: 30
-      alignment: 0
-      pivot: {x: .5, y: .5}
+      alignment: 9
+      pivot: {x: .674200177, y: .45064494}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: hero_soldier_down_shoot_1
       rect:
@@ -240,8 +240,8 @@ TextureImporter:
         y: 584
         width: 43
         height: 30
-      alignment: 0
-      pivot: {x: .5, y: .5}
+      alignment: 9
+      pivot: {x: .574609101, y: .45064494}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: hero_soldier_up_shoot_2
       rect:
@@ -250,8 +250,8 @@ TextureImporter:
         y: 618
         width: 34
         height: 30
-      alignment: 0
-      pivot: {x: .5, y: .5}
+      alignment: 9
+      pivot: {x: .540000021, y: .479999989}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: hero_soldier_down_shoot_2
       rect:
@@ -260,8 +260,8 @@ TextureImporter:
         y: 584
         width: 34
         height: 30
-      alignment: 0
-      pivot: {x: .5, y: .5}
+      alignment: 9
+      pivot: {x: .540000021, y: .469999999}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: hero_soldier_up_shoot_3
       rect:
@@ -270,8 +270,8 @@ TextureImporter:
         y: 618
         width: 44
         height: 30
-      alignment: 0
-      pivot: {x: .5, y: .5}
+      alignment: 9
+      pivot: {x: .578522086, y: .475323498}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: hero_soldier_down_shoot_3
       rect:
@@ -280,8 +280,8 @@ TextureImporter:
         y: 584
         width: 44
         height: 30
-      alignment: 0
-      pivot: {x: .5, y: .5}
+      alignment: 9
+      pivot: {x: .595348358, y: .458870441}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: hero_soldier_up_shoot_4
       rect:
@@ -290,8 +290,8 @@ TextureImporter:
         y: 618
         width: 34
         height: 30
-      alignment: 0
-      pivot: {x: .5, y: .5}
+      alignment: 9
+      pivot: {x: .529999971, y: .460000008}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: hero_soldier_down_shoot_4
       rect:
@@ -300,8 +300,8 @@ TextureImporter:
         y: 584
         width: 34
         height: 30
-      alignment: 0
-      pivot: {x: .5, y: .5}
+      alignment: 9
+      pivot: {x: .540000021, y: .469999999}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: hero_soldier_rocket_run_1
       rect:
@@ -380,8 +380,8 @@ TextureImporter:
         y: 419
         width: 56
         height: 30
-      alignment: 0
-      pivot: {x: .5, y: .5}
+      alignment: 9
+      pivot: {x: .35382393, y: .431784064}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: hero_soldier_rocket_shoot_2
       rect:
@@ -390,8 +390,8 @@ TextureImporter:
         y: 419
         width: 58
         height: 30
-      alignment: 0
-      pivot: {x: .5, y: .5}
+      alignment: 9
+      pivot: {x: .335341871, y: .409046441}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: hero_soldier_rocket_shoot_3
       rect:
@@ -399,9 +399,9 @@ TextureImporter:
         x: 214
         y: 419
         width: 76
-        height: 30
-      alignment: 0
-      pivot: {x: .5, y: .5}
+        height: 32
+      alignment: 9
+      pivot: {x: .492635012, y: .371725082}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: hero_soldier_rocket_shoot_4
       rect:
@@ -409,19 +409,19 @@ TextureImporter:
         x: 297
         y: 420
         width: 86
-        height: 30
-      alignment: 0
-      pivot: {x: .5, y: .5}
+        height: 33
+      alignment: 9
+      pivot: {x: .526034713, y: .341688663}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: hero_soldier_rocket_shoot_5
       rect:
         serializedVersion: 2
-        x: 159
+        x: 161
         y: 363
-        width: 90
-        height: 30
-      alignment: 0
-      pivot: {x: .5, y: .5}
+        width: 88
+        height: 35
+      alignment: 9
+      pivot: {x: .541447222, y: .347632706}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: hero_soldier_rocket_shoot_6
       rect:
@@ -430,8 +430,8 @@ TextureImporter:
         y: 363
         width: 23
         height: 30
-      alignment: 0
-      pivot: {x: .5, y: .5}
+      alignment: 9
+      pivot: {x: .51717478, y: .407826751}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: hero_soldier_rocket_shoot_7
       rect:
@@ -440,8 +440,8 @@ TextureImporter:
         y: 363
         width: 23
         height: 30
-      alignment: 0
-      pivot: {x: .5, y: .5}
+      alignment: 9
+      pivot: {x: .51717478, y: .407827765}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: bullet_right
       rect:

@@ -6,9 +6,10 @@ public class GunController2D : MonoBehaviour {
     
     public bool usingController = true;
 
-    public Transform shootingSpot9;
-
     public Transform bullet;
+    public float bulletUpperAngle = 45f;
+    public float bulletLowerAngle = 45f;
+
     public Transform grenade;
 
     public float grenadeRange = 20f;
@@ -16,9 +17,7 @@ public class GunController2D : MonoBehaviour {
     public float bulletSpeed = 2f;
     public float shootingRate = 0.25f;
     public float throwingRate = 0.5f;
-    Transform currentSelectedFiringPosition;
-    SpriteRenderer spriteRend;
-    Animator gunAngle;
+    Animator anim;
     float shootCooldown;
     float throwCooldown;
     public float flyTime= 2.0f;
@@ -26,10 +25,11 @@ public class GunController2D : MonoBehaviour {
     // Use this for initialization
     void Start () {
         Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("Player"), LayerMask.NameToLayer("Grenade"));
-        spriteRend = GetComponent<SpriteRenderer> ();
-        gunAngle = GetComponent<Animator> ();
+        Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("Player"), LayerMask.NameToLayer("Enemy"));
+        anim = GetComponent<Animator> ();
         shootCooldown = 0f;
         throwCooldown = 0f;
+        anim.SetBool("hasRocket", true);
     }
     
     // Update is called once per frame
@@ -89,14 +89,14 @@ public class GunController2D : MonoBehaviour {
     float GetControllerAngle(){
         float joystick4thAxis = Input.GetAxis ("Mouse X") * 10;
         float joystick5thAxis = Input.GetAxis ("Mouse Y") * 10;
-        Debug.Log("X: " + joystick4thAxis);
-        Debug.Log("Y: " + joystick5thAxis);
+//        Debug.Log("X: " + joystick4thAxis);
+//        Debug.Log("Y: " + joystick5thAxis);
         if (joystick4thAxis <= 0.09 && joystick5thAxis <= 0.09) {
             return 0;
         } else if ((joystick4thAxis <= 0.8 && joystick4thAxis >= -.3) && (joystick5thAxis <= -0.5 && joystick5thAxis >= -1)) {
-            return 45;
+            return bulletUpperAngle;
         } else if ((joystick4thAxis <= 0.8 && joystick4thAxis >= -.3) && (joystick5thAxis >= 0.5 && joystick5thAxis <= 1)) {
-            return -45;
+            return -bulletLowerAngle;
         } 
         return 0;
     }
@@ -119,11 +119,11 @@ public class GunController2D : MonoBehaviour {
         float fire1 = Input.GetAxis ("Fire1");
         if (fire1 == 1)
         {
-            gunAngle.SetBool("isShooting", true);//Show Animation
+            anim.SetBool("isShooting", true);//Show Animation
             return true;
         } else
         {
-            gunAngle.SetBool("isShooting", false);//Show Animation
+            anim.SetBool("isShooting", false);//Show Animation
             return false;
         }
     }
