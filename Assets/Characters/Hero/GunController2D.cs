@@ -29,7 +29,7 @@ public class GunController2D : MonoBehaviour {
         anim = GetComponent<Animator> ();
         shootCooldown = 0f;
         throwCooldown = 0f;
-        anim.SetBool("hasRocket", true);
+//        anim.SetBool("hasRocket", true);
     }
     
     // Update is called once per frame

@@ -25,6 +25,7 @@ public class HeroController2D : MonoBehaviour {
         //      anim.SetBool ("Ground", grounded);
 
         float move = Input.GetAxis ("Horizontal");
+//        Debug.Log(move);
         anim.SetFloat ("Speed", Mathf.Abs (move));
         //        SetRunningSpeed(Mathf.Abs (move));
         rigidbody2D.velocity = new Vector2 (move * MaxSpeed, rigidbody2D.velocity.y); 
