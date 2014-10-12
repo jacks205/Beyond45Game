@@ -12,7 +12,7 @@ public class GunController2D : MonoBehaviour {
 
     public Transform grenade;
 
-    public float grenadeRange = 20f;
+    public float grenadeRange = 7f;
     
     public float bulletSpeed = 2f;
     public float shootingRate = 0.25f;
@@ -23,6 +23,8 @@ public class GunController2D : MonoBehaviour {
     public float flyTime= 2.0f;
     public HeroHealth2D health;
     HeroController2D heroController2D;
+
+    public AmmoUIController ammoUIController;
     // Use this for initialization
     void Start () {
         Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("Player"), LayerMask.NameToLayer("Grenade"));
@@ -33,6 +35,14 @@ public class GunController2D : MonoBehaviour {
         throwCooldown = 0f;
 //        health = GetComponent<HeroHealth2D>();
 //        anim.SetBool("hasRocket", true);
+
+
+        PickUpGrenade();
+        PickUpGrenade();
+        PickUpGrenade();
+        PickUpGrenade();
+        PickUpGrenade();
+
     }
     
     // Update is called once per frame
@@ -117,6 +127,7 @@ public class GunController2D : MonoBehaviour {
 
             grenadeTransform.position = this.transform.position;
             grenadeTransform.rigidbody2D.velocity = -ThrowGrenadeVel(transform.position, heroController2D.FacingRight);
+            ammoUIController.RemoveGrenade();
             Destroy(grenadeTransform.gameObject, 5f);
         }
     }
@@ -152,8 +163,12 @@ public class GunController2D : MonoBehaviour {
         int facingFactor = direction ? -1 : 1;
         grenadeVel.x = facingFactor * grenadeRange / flyTime; // we don't factor in gravity for X
         // Handles different heights nicely
-        grenadeVel.y = (2 - 0.5f * 9.8f * flyTime) / flyTime;
+        grenadeVel.y = (1 - 0.5f * 9.8f * flyTime) / flyTime;
         return grenadeVel;     
+    }
+
+    public void PickUpGrenade(){
+        ammoUIController.AddGrenade();
     }
 
     
@@ -170,7 +185,10 @@ public class GunController2D : MonoBehaviour {
     {
         get
         {
-            return throwCooldown <= 0f;
+            if(ammoUIController.AmmoEmpty)
+                return false;
+            else
+                return throwCooldown <= 0f;
         }
     }
     

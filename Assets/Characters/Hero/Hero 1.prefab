@@ -159,13 +159,14 @@ MonoBehaviour:
   bulletUpperAngle: 45
   bulletLowerAngle: 45
   grenade: {fileID: 400002, guid: fb5c368a77199fd43aa559c66b754ff6, type: 2}
-  grenadeRange: 20
+  grenadeRange: 7
   bulletSpeed: 2
   shootingRate: .25
   throwingRate: .5
   anim: {fileID: 9500000}
   flyTime: 2
   health: {fileID: 11400004}
+  ammoUIController: {fileID: 0}
 --- !u!114 &11400002
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -182,7 +183,7 @@ MonoBehaviour:
   groundCheck: {fileID: 400002}
   whatIsGround:
     serializedVersion: 2
-    m_Bits: 1536
+    m_Bits: 12288
   jumpForce: 30
   health: {fileID: 11400004}
 --- !u!114 &11400004
@@ -198,8 +199,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   startingHealth: 100
   currentHealth: 0
+  healthSlider: {fileID: 0}
   isDead: 0
-  godMode: 1
+  godMode: 0
   anim: {fileID: 9500000}
 --- !u!212 &21200000
 SpriteRenderer:

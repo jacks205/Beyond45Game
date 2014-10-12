@@ -8,7 +8,7 @@ GameObject:
   serializedVersion: 4
   m_Component:
   - 4: {fileID: 400000}
-  m_Layer: 13
+  m_Layer: 15
   m_Name: groundCheck
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -28,7 +28,7 @@ GameObject:
   - 114: {fileID: 11400000}
   - 58: {fileID: 5800002}
   - 58: {fileID: 5800000}
-  m_Layer: 13
+  m_Layer: 15
   m_Name: grenade
   m_TagString: Grenade
   m_Icon: {fileID: 0}
