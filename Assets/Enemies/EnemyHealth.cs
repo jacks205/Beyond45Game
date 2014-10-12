@@ -3,14 +3,14 @@ using System.Collections;
 
 public class EnemyHealth : MonoBehaviour {
 
-	public int startingHealth = 100;
-	public int currentHealth;
+    public float startingHealth = 100;
+	public float currentHealth;
 	public int scoreValue = 10;
 
 
 
 	Animator anim;
-	public static bool IsDead;
+	public bool isDead;
 
 
 	// Use this for initialization
@@ -26,19 +26,18 @@ public class EnemyHealth : MonoBehaviour {
 
 	void OnTriggerEnter2D(Collider2D other)
 	{
-		Debug.Log (other.gameObject.name);
         ShotScript shot = other.GetComponent<ShotScript>();
         if(shot != null){
-            if(!shot.isEnemyShot && !IsDead){
+            if(!shot.isEnemyShot && !isDead){
     			Destroy (other.gameObject);
-    			TakeDamage(GunController.BULLET_DAMAGE);
+    			TakeDamage(shot.damage);
             }
 		}
 	}
 
-	public void TakeDamage (int amount)
+    public void TakeDamage (float amount)
 	{
-        if(IsDead)
+        if(isDead)
 			return;
 
 		currentHealth -= amount;
@@ -50,7 +49,7 @@ public class EnemyHealth : MonoBehaviour {
 
 	void Death ()
 	{
-        IsDead = true;
+        isDead = true;
         anim.SetBool("isDead", true);
         anim.SetTrigger("Dead");
 

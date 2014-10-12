@@ -17,11 +17,11 @@ public class GunController2D : MonoBehaviour {
     public float bulletSpeed = 2f;
     public float shootingRate = 0.25f;
     public float throwingRate = 0.5f;
-    Animator anim;
+    public Animator anim;
     float shootCooldown;
     float throwCooldown;
     public float flyTime= 2.0f;
-    
+    public HeroHealth2D health;
     // Use this for initialization
     void Start () {
         Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("Player"), LayerMask.NameToLayer("Grenade"));
@@ -29,18 +29,22 @@ public class GunController2D : MonoBehaviour {
         anim = GetComponent<Animator> ();
         shootCooldown = 0f;
         throwCooldown = 0f;
+//        health = GetComponent<HeroHealth2D>();
 //        anim.SetBool("hasRocket", true);
     }
     
     // Update is called once per frame
     void Update () {
-        if (shootCooldown > 0)
-            shootCooldown -= Time.deltaTime;
-        if (throwCooldown > 0)
-            throwCooldown -= Time.deltaTime;
-        float controllerDegrees = GetControllerAngle();
-        CheckToShoot(controllerDegrees); 
-        CheckToThrow();
+        if (!health.isDead)
+        {
+            if (shootCooldown > 0)
+                shootCooldown -= Time.deltaTime;
+            if (throwCooldown > 0)
+                throwCooldown -= Time.deltaTime;
+            float controllerDegrees = GetControllerAngle();
+            CheckToShoot(controllerDegrees); 
+            CheckToThrow();
+        }
     }
 
     void CheckToShoot(float gunRotationDegrees){
@@ -60,6 +64,7 @@ public class GunController2D : MonoBehaviour {
             if (shot != null)
             {
 //                shot.isEnemyShot = isEnemy;
+                shot.damage = 50f;
             }
 
             // Make the weapon shot always towards it
@@ -145,7 +150,7 @@ public class GunController2D : MonoBehaviour {
         int facingFactor = direction ? -1 : 1;
         grenadeVel.x = facingFactor * grenadeRange / flyTime; // we don't factor in gravity for X
         // Handles different heights nicely
-        grenadeVel.y = (5 - 0.5f * 9.8f * flyTime) / flyTime;
+        grenadeVel.y = (2 - 0.5f * 9.8f * flyTime) / flyTime;
         return grenadeVel;     
     }
 

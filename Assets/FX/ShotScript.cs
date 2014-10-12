@@ -3,7 +3,7 @@ using System.Collections;
 
 public class ShotScript : MonoBehaviour {
 
-    public int damage = 1;
+    public float damage = 25f;
 
     public bool isEnemyShot = false;
     

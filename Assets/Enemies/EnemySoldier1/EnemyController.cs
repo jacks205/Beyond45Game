@@ -4,7 +4,7 @@ using System.Collections;
 public class EnemyController : MonoBehaviour {
 
     public static float MaxSpeed = 2.5f;
-    public static bool FacingRight = false;
+    public bool FacingRight = false;
 
     public Transform player;
     public Transform bullet;
@@ -14,7 +14,7 @@ public class EnemyController : MonoBehaviour {
     public float speed = 2.5f;
 
     private float velocity = 1f;
-
+    public float vAngleFactor = 1f;
 
 
     public float shootingRate = 0.25f;
@@ -23,38 +23,34 @@ public class EnemyController : MonoBehaviour {
     float startTime;
     float duration = 3f;
 
-    float playerDistance;
+    public float lookingRange = 15f;
+    public float shootingRange = 5f;
 
+    public float playerDistance;
+    EnemyHealth enemyHealth;
 	// Use this for initialization
 	void Start () {
         startPoint = transform.position;
         startTime = Time.time;
         shootCooldown = 0f;
+        enemyHealth = GetComponent<EnemyHealth>();
+
 	}
 
 	// Update is called once per frame
 	void Update () {
 //        Debug.Log(EnemyHealth.IsDead);
-        if (!EnemyHealth.IsDead)
+        if (!enemyHealth.isDead)
         {
             if (shootCooldown > 0)
                 shootCooldown -= Time.deltaTime;
-            playerDistance = Vector2.Distance(player.position, transform.position);
-            if(playerDistance < 15f){
+            playerDistance = Vector2.Distance(player.localPosition, transform.position);
+            if(playerDistance < lookingRange){
                 LookAtPlayer();
-                if(playerDistance < 5f && CanAttack)
+//                Debug.Log(playerDistance < shootingRange);
+                if(playerDistance < shootingRange && CanAttack)
                     Shoot();
             }
-//            rigidBody.velocity = ( player.position - transform.position )*speed;
-//            transform.Translate(-speed * Time.deltaTime, 0, 0);
-//            transform.position = Vector2.Lerp(startPoint, player.position, (Time.time - startTime) / duration);
-            //if enemy moves off left side of screen...
-//        Debug.Log(transform.position.x);
-//        if(transform.position.x <= -25)
-//        {
-//            //then have randomize its position and move it to the right side of the screen.
-//            transform.position = new Vector3(25* Time.deltaTime,0,0);
-//        }
         }
 	}
 
@@ -75,28 +71,38 @@ public class EnemyController : MonoBehaviour {
         
         // Make the weapon shot always towards it
         BulletMove move = shotTransform.gameObject.GetComponent<BulletMove>();
-//        Vector2 direction = Vector2.right.Rotate(gunRotationDegrees);
-        //            float gunRotationDegreesOpposite = 180 - gunRotationDegrees;
-        //            Vector2 oppositeDirection = Vector2.right.Rotate(gunRotationDegreesOpposite);
+
+        float playerVertical = player.localPosition.y;
+        float enemyVerticalUp = transform.position.y + vAngleFactor;
+        float enemyVerticalDown = transform.position.y - vAngleFactor;
+        float gunRotationDegrees = 0f;
+        if (playerVertical > enemyVerticalUp)
+        {
+            gunRotationDegrees = 45f;
+        } else if (playerVertical < enemyVerticalDown)
+        {
+            gunRotationDegrees = -45f;
+        }
         if (move != null)
         {
             move.speed = bulletSpeed;
             if(FacingRight){
-                Vector2 angle0 = Vector2.right.Rotate(0f);
-                SetBulletAngleAndVelocity(shotTransform, move, angle0, 0f);
+                Vector2 direction = Vector2.right.Rotate(gunRotationDegrees);
+                SetBulletAngleAndVelocity(shotTransform, move, direction, gunRotationDegrees);
             }else{
                 //                    SetBulletAngleAndVelocity(shotTransform, move, oppositeDirection, gunRotationDegreesOpposite);
-                Vector2 angle180 = Vector2.right.Rotate(180f);
-                SetBulletAngleAndVelocity(shotTransform, move, angle180, 180f);
+                float gunRotationDegreesOpposite = 180 - gunRotationDegrees;
+                Vector2 oppositeDirection = Vector2.right.Rotate(gunRotationDegreesOpposite);
+                SetBulletAngleAndVelocity(shotTransform, move, oppositeDirection, gunRotationDegreesOpposite);
             }
             
         }
     }
 
     void LookAtPlayer(){
-        if (!FacingRight && (player.position.x > transform.position.x))
+        if (!FacingRight && (player.localPosition.x > transform.position.x))
             Flip();
-        else if (FacingRight && (player.position.x < transform.position.x))
+        else if (FacingRight && (player.localPosition.x < transform.position.x))
             Flip();
     }
 
