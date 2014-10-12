@@ -1,11 +1,12 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
 public class HeroHealth2D : MonoBehaviour {
 
     public float startingHealth = 100f;
     public float currentHealth;
-
+    public Slider healthSlider;  
     public bool isDead = false;
     public bool godMode;
     public Animator anim;
@@ -36,8 +37,11 @@ public class HeroHealth2D : MonoBehaviour {
     void TakeDamage(float damage){
         if(isDead)
             return;
-        if(!godMode)
+        if (!godMode)
+        {
             currentHealth -= damage;
+            healthSlider.value = currentHealth;
+        }
         if(currentHealth <= 0)
         {
             Death ();

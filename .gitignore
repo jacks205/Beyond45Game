@@ -17,7 +17,10 @@
 
 PixelLandscape/
 2DPlatformController/
-
+APT_GUI/
+GameBarCreationSystem/
+GradientGUIBars/
+_CompletedAssets/
 
 #Unity3D Generated File On Crash Reports
 sysinfo.txt

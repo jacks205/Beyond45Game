@@ -22,11 +22,13 @@ public class GunController2D : MonoBehaviour {
     float throwCooldown;
     public float flyTime= 2.0f;
     public HeroHealth2D health;
+    HeroController2D heroController2D;
     // Use this for initialization
     void Start () {
         Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("Player"), LayerMask.NameToLayer("Grenade"));
         Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("Player"), LayerMask.NameToLayer("Enemy"));
         anim = GetComponent<Animator> ();
+        heroController2D = GetComponent<HeroController2D>();
         shootCooldown = 0f;
         throwCooldown = 0f;
 //        health = GetComponent<HeroHealth2D>();
@@ -74,7 +76,7 @@ public class GunController2D : MonoBehaviour {
 //            Vector2 oppositeDirection = Vector2.right.Rotate(gunRotationDegreesOpposite);
             if (move != null)
             {
-                if(HeroController2D.FacingRight){
+                if(heroController2D.FacingRight){
                     SetBulletAngleAndVelocity(shotTransform, move, direction, gunRotationDegrees);
                 }else{
 //                    SetBulletAngleAndVelocity(shotTransform, move, oppositeDirection, gunRotationDegreesOpposite);
@@ -90,7 +92,7 @@ public class GunController2D : MonoBehaviour {
         obj.Rotate(new Vector3(0,0,rotation));
         move.direction = direction; // towards in 2D space is the right of the sprite
     }
-
+     
     float GetControllerAngle(){
         float joystick4thAxis = Input.GetAxis ("Mouse X") * 10;
         float joystick5thAxis = Input.GetAxis ("Mouse Y") * 10;
@@ -114,7 +116,7 @@ public class GunController2D : MonoBehaviour {
             Transform grenadeTransform = Instantiate(grenade) as Transform;
 
             grenadeTransform.position = this.transform.position;
-            grenadeTransform.rigidbody2D.velocity = -ThrowGrenadeVel(transform.position, HeroController2D.FacingRight);
+            grenadeTransform.rigidbody2D.velocity = -ThrowGrenadeVel(transform.position, heroController2D.FacingRight);
             Destroy(grenadeTransform.gameObject, 5f);
         }
     }

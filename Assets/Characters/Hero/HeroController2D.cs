@@ -4,7 +4,7 @@ using System.Collections;
 public class HeroController2D : MonoBehaviour {
     
     public static float MaxSpeed = 2.5f;
-    public static bool FacingRight = false;
+    public bool FacingRight = false;
 
     public Animator anim;
 
@@ -56,7 +56,7 @@ public class HeroController2D : MonoBehaviour {
         {
             if (grounded && Input.GetAxis("Jump") > 0)
             {
-                Debug.Log("Jump");
+//                Debug.Log("Jump");
                 rigidbody2D.AddForce(new Vector2(0, jumpForce));
             }
         }
