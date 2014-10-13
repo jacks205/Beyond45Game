@@ -25,12 +25,28 @@ GameObject:
   - 4: {fileID: 400002}
   - 212: {fileID: 21200000}
   - 50: {fileID: 5000000}
-  - 114: {fileID: 11400000}
   - 58: {fileID: 5800002}
   - 58: {fileID: 5800000}
   m_Layer: 15
   m_Name: grenade
   m_TagString: Grenade
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &100004
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 400004}
+  - 114: {fileID: 11400002}
+  - 58: {fileID: 5800006}
+  m_Layer: 15
+  m_Name: explosion
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -54,12 +70,25 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100002}
   m_LocalRotation: {x: 0, y: 0, z: .707106829, w: .707106829}
-  m_LocalPosition: {x: 18.8190002, y: .259979993, z: .0703129992}
+  m_LocalPosition: {x: -19.625, y: -2.00929999, z: .0703129992}
   m_LocalScale: {x: 1.4066304, y: 1.40663028, z: 1.40663028}
   m_Children:
   - {fileID: 400000}
+  - {fileID: 400004}
   m_Father: {fileID: 0}
   m_RootOrder: 0
+--- !u!4 &400004
+Transform:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100004}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 400002}
+  m_RootOrder: 1
 --- !u!50 &5000000
 Rigidbody2D:
   m_ObjectHideFlags: 1
@@ -82,7 +111,7 @@ CircleCollider2D:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100002}
   m_Enabled: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: b20f9569274a65c40a928a2eb78d7e99, type: 2}
   m_IsTrigger: 0
   m_Radius: .00675137341
   m_Center: {x: -.0199999996, y: 0}
@@ -93,16 +122,27 @@ CircleCollider2D:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100002}
   m_Enabled: 1
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 6200000, guid: b20f9569274a65c40a928a2eb78d7e99, type: 2}
   m_IsTrigger: 0
   m_Radius: .0114389611
   m_Center: {x: .0199999996, y: 0}
---- !u!114 &11400000
+--- !u!58 &5800006
+CircleCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 100004}
+  m_Enabled: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Radius: .0240643956
+  m_Center: {x: .00999999978, y: 0}
+--- !u!114 &11400002
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 100002}
+  m_GameObject: {fileID: 100004}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5057ce70e07d3af4aa596403c09263ed, type: 3}
@@ -111,7 +151,15 @@ MonoBehaviour:
   groundCheck: {fileID: 400000}
   whatIsGround:
     serializedVersion: 2
-    m_Bits: 4294960895
+    m_Bits: 12288
+  explosionDelay: 2
+  explosionRate: .5
+  explosionMaxSize: 1
+  explosionSpeed: 3
+  currentRadius: 0
+  explosionPower: 200
+  explosionVerticalMultiplier: 12
+  explosionDamage: 100
 --- !u!212 &21200000
 SpriteRenderer:
   m_ObjectHideFlags: 1

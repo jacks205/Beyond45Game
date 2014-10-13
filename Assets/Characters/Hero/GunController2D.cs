@@ -29,6 +29,7 @@ public class GunController2D : MonoBehaviour {
     void Start () {
         Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("Player"), LayerMask.NameToLayer("Grenade"));
         Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("Player"), LayerMask.NameToLayer("Enemy"));
+//        Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("Player"), LayerMask.NameToLayer("AmmoBox"));
         anim = GetComponent<Animator> ();
         heroController2D = GetComponent<HeroController2D>();
         shootCooldown = 0f;
@@ -56,6 +57,18 @@ public class GunController2D : MonoBehaviour {
             float controllerDegrees = GetControllerAngle();
             CheckToShoot(controllerDegrees); 
             CheckToThrow();
+        }
+    }
+
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.name.Equals("AmmoBox"))
+        {
+            if (!ammoUIController.AmmoFull)
+            {
+                Destroy(other.gameObject);
+                PickUpGrenade();
+            }
         }
     }
 
@@ -128,7 +141,7 @@ public class GunController2D : MonoBehaviour {
             grenadeTransform.position = this.transform.position;
             grenadeTransform.rigidbody2D.velocity = -ThrowGrenadeVel(transform.position, heroController2D.FacingRight);
             ammoUIController.RemoveGrenade();
-            Destroy(grenadeTransform.gameObject, 5f);
+//            Destroy(grenadeTransform.gameObject, 5f);
         }
     }
 

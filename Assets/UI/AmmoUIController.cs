@@ -6,28 +6,30 @@ public class AmmoUIController : MonoBehaviour {
 
     public Image grenadeImage;
     public Sprite grenadeImg;
-    RectTransform rectTransform;
+    public RectTransform rectTransform;
 	// Use this for initialization
-    public Vector2 fuck;
-    RectTransform fuckRect;
+//    public Vector2 test;
+//    RectTransform testRect;
 
     int ammoCount = 0;
     public int ammoCapacity = 5;
-    GameObject[] ammoList;
+    GameObject[] ammoList = null;
     public float grenadeSpacingX = 40f;
     public Vector2 firstGrenadePosition = new Vector2(37.506f, 347.311f);
 
 	void Start () {
-        rectTransform = GetComponent<RectTransform>();
-        ammoList = new GameObject[ammoCapacity];
+//        rectTransform = GetComponent<RectTransform>();
+
 	}
 	
 	// Update is called once per frame
 	void Update () {
-        fuck = fuckRect.transform.position;
+//        test = testRect.transform.position;
 	}
 
     public void AddGrenade(){
+        if(ammoList == null)
+            ammoList = new GameObject[ammoCapacity];
         if (!AmmoFull)
         {
             GameObject ammoObj = new GameObject();
@@ -37,6 +39,7 @@ public class AmmoUIController : MonoBehaviour {
             image.gameObject.transform.localScale = new Vector3(.3f, .3f, 0);
 //            ammoObj.AddComponent<RectTransform>();
             RectTransform imgRect = ammoObj.GetComponent<RectTransform>();
+//            Debug.Log(rectTransform);
             imgRect.anchoredPosition = rectTransform.anchoredPosition;
 //            Debug.Log(ammoCount);
             if(ammoCount > 0){
@@ -48,7 +51,7 @@ public class AmmoUIController : MonoBehaviour {
                 //First position
                 ammoObj.transform.position = firstGrenadePosition;
                 ammoList[ammoCount] = ammoObj;
-                fuckRect = imgRect;
+//                testRect = imgRect;
                 ++ammoCount;
             }
 
