@@ -17,12 +17,9 @@ Contents
 8. [Characters] (#characters)
 9. [Enemies] (#enemies)
 10. [Weapons] (#weapons)
-11. [Script] (#script)
-12. [Scoring] (#scoring)
-13. [Bonuses] (#bonuses)
-14. [Design Notes] (#notes)
-15. [Weekly Blog Posts](#posts)
-16. [Future Features] (#futurefeatures)
+11. [Design Notes] (#notes)
+12. [Weekly Blog Posts](#posts)
+13. [Future Features] (#futurefeatures)
 
 
 Version History
@@ -31,6 +28,7 @@ Version History
 Version | Draft | Description
 -----------|--------|-----------------
 Draft | 10/2/2014 | Initial Draft
+0.1 | 10/22/2014 | Revision and Addition of Story and Level
 
 ##<a name="gameplayoverview"></a>Gameplay Overview
 
@@ -52,7 +50,7 @@ Following Unity's [Xbox360 Controller Mapping](http://wiki.unity3d.com/images/a/
     - A
       - Jump
     - B
-      - Grenades (Maybe aimable and changed)
+      - Grenades
     - Right Trigger
       - Shooting
 
@@ -75,34 +73,49 @@ Following Unity's [Xbox360 Controller Mapping](http://wiki.unity3d.com/images/a/
 
 ##<a name="menu"></a>Menu and Screen Descriptions
 
+Simple menu that consists of "Start", "Continue", and "Quit". The player can continue where they previously left off in their most recent checkpoint.
+
 ##<a name="gameworld"></a>Game World and Levels
 
-Depends on story. Will most likely take place in an exotic location.
+What if in 1939 the Molotov–Ribbentrop Pact actually held, and Nazi Germany never decided to go with Operation Barbarossa in 1941? That means Hitler wouldn't of overextended his forces into Russia, causing Germany to lose the war. Without the east to worry about, he focuses his attention to the west and south, successfully developing a foothold in the UK and Africa and prolonging the war past 1945. 
 
-##<a name="levels"></a>Levels
+The main character will travel across different environments, consisting of deep forests in Europe and Siberia, dry desert of Africa and the Middle East, and infiltrating secret Nazi/Communist compounds.
 
 ##<a name="progression"></a>Game Progression
 
+Progression through the game will be tracked by a checkpoint system. Markers on the game levels will save checkpoints of the player, and each death will bring them back to the most recent checkpoint. 
+
+The player will also have a limited number of lives that, when they run out, the play must start the current level all over again.
+
 ##<a name="characters"></a>Characters
 
+Main Hero: United States Commando sent behind enemy lines to disrupt and destroy key enemy positions in order to advanced the Allied movement toward bringing down the Nazis and Russians.
+
 ##<a name="enemies"></a>Enemies
-Typical bad guy army enemies that are clueless compared to yourself.
+
+Infantry: Shoot at slow rate and and reasonably accurate. Light health and are susceptible to rockets and grenades. Can be deadly behind cover.
+
+Tanks: Large Shell that takes away a lot of damage, shoots at a very slow rate. Bullets do nearly no damage to them, must take advantage of rockets and well placed grenades.
+
+Jeeps: Health is between infantry and tanks, but still takes a lot of bullets to kill. Fast rate of fire that is inaccurate and sometimes unpredictable.
 
 ##<a name="weapons"></a>Weapons
-![Item Drop](Assets/Ideas/item-bomb.gif)
-![Grenades](Assets/Ideas/grenades.gif)
 
-##<a name="script"></a>Script
+[Weapon Examples](https://www.youtube.com/watch?v=JPiwHO6HJ2U)
 
-##<a name="scoring"></a>Scoring
+Grenades: Able to pick them up, to a limit of 5. Thrown in upwards angle to reach targets behind cover. Effective against infantry.
 
-##<a name="bonuses"></a>Bonuses
+Rockets: Able to pick them up for a limited amount of time. Effective against Tanks and Jeeps, and able to blow up cover.
 
 ##<a name="notes"></a>Design Notes
+
+Deciding between having the levels fluidly join together or might have story between levels as if a new mission each time.
 
 ##<a name="posts"></a>Weekly Blog Posts
 1. [Initial Panic](http://jacks205.blogspot.com/2014/09/week-1-initial-panic.html)
 2. [Not Much Panic](http://jacks205.blogspot.com/2014/09/week-2-not-much-panic.html)
+3. [Who Do I Shoot?](http://jacks205.blogspot.com/2014/10/week-3-who-do-i-shoot.html)
+4. [New Style and Progess!](http://jacks205.blogspot.com/2014/10/week-4-new-style-and-progess.html)
 
 ##<a name="futurefeatures"></a>Future Features
 
