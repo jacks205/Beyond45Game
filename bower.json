@@ -1,0 +1,9 @@
+{
+  "name": "game-website",
+  "private": true,
+  "dependencies": {
+    "modernizr": "~2.6.2",
+    "bourbon": "latest"
+  },
+  "devDependencies": {}
+}
