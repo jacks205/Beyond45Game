@@ -3,6 +3,14 @@ guid: 099cbfc26d54de24cbab1c0985614ad4
 TextureImporter:
   fileIDToRecycleName:
     21300000: enemy_soldier_3
+    21300002: enemy_soldier_3_15
+    21300004: enemy_soldier_3_16
+    21300006: enemy_soldier_3_17
+    21300008: enemy_soldier_3_32
+    21300010: enemy_soldier_3_33
+    21300012: enemy_soldier_3_35
+    21300014: enemy_soldier_3_36
+    21300016: enemy_soldier_3_7
   serializedVersion: 2
   mipmaps:
     mipMapMode: 0
@@ -23,16 +31,16 @@ TextureImporter:
   generateCubemap: 0
   seamlessCubemap: 0
   textureFormat: -1
-  maxTextureSize: 1024
+  maxTextureSize: 4096
   textureSettings:
     filterMode: -1
-    aniso: -1
+    aniso: 1
     mipBias: -1
-    wrapMode: -1
+    wrapMode: 1
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -43,6 +51,86 @@ TextureImporter:
   textureType: 8
   buildTargetSettings: []
   spriteSheet:
-    sprites: []
+    sprites:
+    - name: enemy_soldier_3_15
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 742
+        width: 7
+        height: 9
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: enemy_soldier_3_16
+      rect:
+        serializedVersion: 2
+        x: 153
+        y: 742
+        width: 5
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: enemy_soldier_3_17
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 742
+        width: 5
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: enemy_soldier_3_32
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 638
+        width: 34
+        height: 28
+      alignment: 9
+      pivot: {x: .598719001, y: .404102862}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: enemy_soldier_3_33
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 638
+        width: 30
+        height: 28
+      alignment: 9
+      pivot: {x: .320990503, y: .416089743}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: enemy_soldier_3_35
+      rect:
+        serializedVersion: 2
+        x: 237
+        y: 638
+        width: 44
+        height: 32
+      alignment: 9
+      pivot: {x: .511442721, y: .358400345}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: enemy_soldier_3_36
+      rect:
+        serializedVersion: 2
+        x: 288
+        y: 638
+        width: 30
+        height: 28
+      alignment: 9
+      pivot: {x: .31539613, y: .404102862}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: enemy_soldier_3_7
+      rect:
+        serializedVersion: 2
+        x: 247
+        y: 768
+        width: 24
+        height: 28
+      alignment: 9
+      pivot: {x: .38511911, y: .410093039}
+      border: {x: 0, y: 0, z: 0, w: 0}
   spritePackingTag: 
   userData: 

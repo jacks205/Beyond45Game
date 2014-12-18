@@ -8,12 +8,13 @@ public class EnemyController : MonoBehaviour {
 
     public Transform player;
     public Transform bullet;
-    public Vector2 bulletSpeed;
-    public float maxX = 1f;
-    public float minX = 1f;
-    public float speed = 2.5f;
 
-    private float velocity = 1f;
+    public Vector2 bulletSpeed = new Vector2(5f,5f);
+
+    Animator anim;
+	public bool isTank;
+	public Vector3 tankBulletScale = new Vector3(4f,4f);
+
     public float vAngleFactor = 1f;
 
 
@@ -25,6 +26,7 @@ public class EnemyController : MonoBehaviour {
 
     public float lookingRange = 15f;
     public float shootingRange = 5f;
+    
 
     public float playerDistance;
     EnemyHealth enemyHealth;
@@ -34,12 +36,12 @@ public class EnemyController : MonoBehaviour {
         startTime = Time.time;
         shootCooldown = 0f;
         enemyHealth = GetComponent<EnemyHealth>();
-
+        anim = GetComponent<Animator>();
 	}
 
 	// Update is called once per frame
 	void Update () {
-//        Debug.Log(EnemyHealth.IsDead);
+//        Debug.Log(GetAngleToPlayer(this.player.transform));
         if (!enemyHealth.isDead)
         {
             if (shootCooldown > 0)
@@ -48,10 +50,14 @@ public class EnemyController : MonoBehaviour {
             if(playerDistance < lookingRange){
                 LookAtPlayer();
 //                Debug.Log(playerDistance < shootingRange);
-                if(playerDistance < shootingRange && CanAttack)
+                if(playerDistance < shootingRange && CanAttack){
                     Shoot();
+                    anim.SetBool("isShooting",true);
+                }else
+                    anim.SetBool("isShooting",false);
             }
-        }
+        }else
+            anim.SetBool("isShooting",false);
 	}
 
     void Shoot(){
@@ -61,16 +67,19 @@ public class EnemyController : MonoBehaviour {
         Transform shotTransform = Instantiate(bullet) as Transform;
         // Assign position
         shotTransform.position = transform.position;
-        
+		if (isTank)
+			shotTransform.localScale = tankBulletScale;
         // The is enemy property
-        ShotScript shot = shotTransform.gameObject.GetComponent<ShotScript>();
+		Bullet2D shot = shotTransform.gameObject.GetComponent<Bullet2D>();
         if (shot != null)
         {
             shot.isEnemyShot = true;
+            if(!isTank)shot.damage = (float)Random.Range(5, 12);
+            else shot.damage = (float)Random.Range(20, 30);
         }
+
         
         // Make the weapon shot always towards it
-        BulletMove move = shotTransform.gameObject.GetComponent<BulletMove>();
 
         float playerVertical = player.localPosition.y;
         float enemyVerticalUp = transform.position.y + vAngleFactor;
@@ -83,20 +92,29 @@ public class EnemyController : MonoBehaviour {
         {
             gunRotationDegrees = -45f;
         }
-        if (move != null)
+//        gunRotationDegrees = GetAngleToPlayer(player);
+		if (shot != null)
         {
-            move.speed = bulletSpeed;
+			shot.speed = bulletSpeed;
             if(FacingRight){
                 Vector2 direction = Vector2.right.Rotate(gunRotationDegrees);
-                SetBulletAngleAndVelocity(shotTransform, move, direction, gunRotationDegrees);
+				SetBulletAngleAndVelocity(shotTransform, shot, direction, gunRotationDegrees);
             }else{
                 //                    SetBulletAngleAndVelocity(shotTransform, move, oppositeDirection, gunRotationDegreesOpposite);
                 float gunRotationDegreesOpposite = 180 - gunRotationDegrees;
                 Vector2 oppositeDirection = Vector2.right.Rotate(gunRotationDegreesOpposite);
-                SetBulletAngleAndVelocity(shotTransform, move, oppositeDirection, gunRotationDegreesOpposite);
+				SetBulletAngleAndVelocity(shotTransform, shot, oppositeDirection, gunRotationDegreesOpposite);
             }
             
         }
+    }
+
+    float GetAngleToPlayer(Transform heroTransform)
+    {
+        float ang = Vector2.Angle(player.position, transform.position);
+//        if (Vector3.Cross(transform.position, player.position).z > 0)
+//            ang = 360 - ang;
+        return ang;
     }
 
     void LookAtPlayer(){
@@ -106,7 +124,7 @@ public class EnemyController : MonoBehaviour {
             Flip();
     }
 
-    void SetBulletAngleAndVelocity(Transform obj, BulletMove move, Vector2 direction, float rotation){
+	void SetBulletAngleAndVelocity(Transform obj, Bullet2D move, Vector2 direction, float rotation){
         obj.Rotate(new Vector3(0,0,rotation));
         move.direction = direction; // towards in 2D space is the right of the sprite
     }

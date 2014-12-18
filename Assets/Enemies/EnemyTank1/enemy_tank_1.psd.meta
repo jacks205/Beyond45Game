@@ -1,0 +1,168 @@
+fileFormatVersion: 2
+guid: 08a231ebf20042a40bbe51b3f08bfbe2
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: enemy_tank_1_idle
+    21300002: enemy_tank_1_driving_1
+    21300004: enemy_tank_1_driving_2
+    21300006: enemy_tank_1_driving_3
+    21300008: enemy_tank_1_driving_4
+    21300010: enemy_tank_1_shooting_main_1
+    21300012: enemy_tank_1_shooting_main_2
+    21300014: enemy_tank_1_shooting_main_3
+    21300016: enemy_tank_1_shooting_main_4
+    21300018: enemy_tank_1_shooting_mg_1
+    21300020: enemy_tank_1_shooting_mg_2
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 4096
+  textureSettings:
+    filterMode: -1
+    aniso: 1
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: enemy_tank_1_idle
+      rect:
+        serializedVersion: 2
+        x: 83
+        y: 391
+        width: 42
+        height: 47
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: enemy_tank_1_driving_1
+      rect:
+        serializedVersion: 2
+        x: 12
+        y: 279
+        width: 42
+        height: 47
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: enemy_tank_1_driving_2
+      rect:
+        serializedVersion: 2
+        x: 72
+        y: 279
+        width: 42
+        height: 47
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: enemy_tank_1_driving_3
+      rect:
+        serializedVersion: 2
+        x: 132
+        y: 279
+        width: 42
+        height: 47
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: enemy_tank_1_driving_4
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 279
+        width: 42
+        height: 47
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: enemy_tank_1_shooting_main_1
+      rect:
+        serializedVersion: 2
+        x: 15
+        y: 169
+        width: 57
+        height: 48
+      alignment: 9
+      pivot: {x: .623492181, y: .489143997}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: enemy_tank_1_shooting_main_2
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 169
+        width: 60
+        height: 48
+      alignment: 9
+      pivot: {x: .650165439, y: .492780358}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: enemy_tank_1_shooting_main_3
+      rect:
+        serializedVersion: 2
+        x: 180
+        y: 169
+        width: 59
+        height: 48
+      alignment: 9
+      pivot: {x: .630641341, y: .49073568}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: enemy_tank_1_shooting_main_4
+      rect:
+        serializedVersion: 2
+        x: 37
+        y: 70
+        width: 63
+        height: 48
+      alignment: 9
+      pivot: {x: .646068156, y: .488254875}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: enemy_tank_1_shooting_mg_1
+      rect:
+        serializedVersion: 2
+        x: 150
+        y: 67
+        width: 42
+        height: 48
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: enemy_tank_1_shooting_mg_2
+      rect:
+        serializedVersion: 2
+        x: 193
+        y: 67
+        width: 55
+        height: 48
+      alignment: 9
+      pivot: {x: .616304457, y: .503029048}
+      border: {x: 0, y: 0, z: 0, w: 0}
+  spritePackingTag: 
+  userData: 

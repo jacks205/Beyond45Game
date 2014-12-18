@@ -84,7 +84,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 100004}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -20.375, y: -2.02979994, z: 0}
+  m_LocalPosition: {x: -20.5890007, y: -2.03290009, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 400002}
@@ -155,18 +155,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   usingController: 1
-  bullet: {fileID: 400000, guid: a70fdfe2436c23c4c804789cc4a13f18, type: 2}
+  bullet: {fileID: 400000, guid: ae83c08f94727f9448c70eef9a9f4664, type: 2}
+  rocket: {fileID: 400002, guid: 73d82c41509acb444819996744eb9d81, type: 2}
   bulletUpperAngle: 45
   bulletLowerAngle: 45
   grenade: {fileID: 400002, guid: fb5c368a77199fd43aa559c66b754ff6, type: 2}
   grenadeRange: 7
-  bulletSpeed: 2
+  bulletSpeed: .200000003
   shootingRate: .25
+  rocketRate: .75
   throwingRate: .5
   anim: {fileID: 9500000}
   flyTime: 2
   health: {fileID: 11400004}
+  rocketTimer: 5
   ammoUIController: {fileID: 0}
+  machineGunUIController: {fileID: 0}
 --- !u!114 &11400002
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -183,9 +187,10 @@ MonoBehaviour:
   groundCheck: {fileID: 400002}
   whatIsGround:
     serializedVersion: 2
-    m_Bits: 12288
-  jumpForce: 30
+    m_Bits: 143360
+  jumpForce: 5
   health: {fileID: 11400004}
+  jumpTimeLimit: .5
 --- !u!114 &11400004
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -200,9 +205,17 @@ MonoBehaviour:
   startingHealth: 100
   currentHealth: 0
   healthSlider: {fileID: 0}
-  isDead: 0
-  godMode: 1
+  livesController: {fileID: 0}
+  godMode: 0
   anim: {fileID: 9500000}
+  damageEmitter: {fileID: 0}
+  backToMenuTimer: 3
+  totalLives: 2
+  respawnTime: 3
+  checkpoints:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!212 &21200000
 SpriteRenderer:
   m_ObjectHideFlags: 1

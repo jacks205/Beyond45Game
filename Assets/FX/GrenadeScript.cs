@@ -3,20 +3,18 @@ using System.Collections;
 
 public class GrenadeScript : MonoBehaviour {
 
-    bool grounded = false;
-    public Transform groundCheck;
+    public Transform explodeAnimTransform;
     float groundRadius = 0.2f;
     public LayerMask  whatIsGround;
-
     public float explosionDelay = 1f;
     public float explosionRate = 0.5f;
-    public float explosionMaxSize = 1f;
+    public float explosionMaxSize = 1f; 
     public float explosionSpeed = 2f;
     public float currentRadius = 0f;
     public float explosionPower = 200f;
     public float explosionVerticalMultiplier = 10f;
-    public float explosionDamage = 100f;
-
+    public int explosionDamage = 100;
+    bool showedExplosion = false;
     bool exploded = false;
     CircleCollider2D explosionRadius;
 	// Use this for initialization
@@ -24,15 +22,19 @@ public class GrenadeScript : MonoBehaviour {
         Physics2D.GetIgnoreLayerCollision(LayerMask.NameToLayer("Grenade"), LayerMask.NameToLayer("Default"));
         Physics2D.GetIgnoreLayerCollision(LayerMask.NameToLayer("Grenade"), LayerMask.NameToLayer("Bullet"));
         explosionRadius = GetComponent<CircleCollider2D>();
+        explosionDamage = Random.Range(explosionDamage - 20, explosionDamage);
 	}
 	
 	// Update is called once per frame
 	void Update () {
-        grounded = Physics2D.OverlapCircle (groundCheck.position, groundRadius, whatIsGround);
         explosionDelay -= Time.deltaTime;
         if (explosionDelay < 0)
         {
             exploded = true;
+            if(!showedExplosion){
+                ShowExplosion();
+                showedExplosion = true;
+            }
         }
 	}
 
@@ -64,11 +66,19 @@ public class GrenadeScript : MonoBehaviour {
                         Vector2 direction = explosionPower * (target - grenade);
                         direction.y *= explosionVerticalMultiplier;
                         other.gameObject.rigidbody2D.AddForce(direction);
-                        enemyHealth.TakeDamage(explosionDamage);
+                        enemyHealth.TakeDamage((float)explosionDamage);
                     }
                    
                 }
             }
         }
     }
+
+    void ShowExplosion(){
+        Transform boom = Instantiate(explodeAnimTransform,this.transform.position,this.transform.rotation) as Transform;
+        Animator explodeAnim = boom.GetComponent<Animator>();
+        explodeAnim.SetTrigger("Explode");
+        Destroy(boom.gameObject, 3f);
+    }
+
 }

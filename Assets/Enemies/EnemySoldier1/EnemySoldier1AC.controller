@@ -164,8 +164,8 @@ Transition:
   m_TransitionDuration: .100000001
   m_TransitionOffset: 0
   m_Conditions:
-  - m_ConditionMode: 3
-    m_ConditionEvent: Speed
+  - m_ConditionMode: 1
+    m_ConditionEvent: isShooting
     m_EventTreshold: .100000001
     m_ExitTime: .899999976
   - m_ConditionMode: 2

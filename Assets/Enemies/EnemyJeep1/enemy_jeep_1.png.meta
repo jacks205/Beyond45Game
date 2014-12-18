@@ -1,0 +1,124 @@
+fileFormatVersion: 2
+guid: edf20c93460c6124492bb80279e75e06
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: enemy_jeep_idle
+    21300002: enemy_jeep_1_driving_1
+    21300004: enemy_jeep_1_driving_2
+    21300006: enemy_jeep_1_driving_3
+    21300008: enemy_jeep_1_driving_4
+    21300010: enemy_jeep_1_shooting_1
+    21300012: enemy_jeep_1_shooting_2
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 4096
+  textureSettings:
+    filterMode: -1
+    aniso: 1
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: enemy_jeep_idle
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 279
+        width: 44
+        height: 52
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: enemy_jeep_1_driving_1
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 170
+        width: 44
+        height: 52
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: enemy_jeep_1_driving_2
+      rect:
+        serializedVersion: 2
+        x: 68
+        y: 170
+        width: 44
+        height: 52
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: enemy_jeep_1_driving_3
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 170
+        width: 44
+        height: 52
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: enemy_jeep_1_driving_4
+      rect:
+        serializedVersion: 2
+        x: 188
+        y: 170
+        width: 44
+        height: 52
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: enemy_jeep_1_shooting_1
+      rect:
+        serializedVersion: 2
+        x: 8
+        y: 64
+        width: 44
+        height: 52
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: enemy_jeep_1_shooting_2
+      rect:
+        serializedVersion: 2
+        x: 67
+        y: 64
+        width: 55
+        height: 52
+      alignment: 9
+      pivot: {x: .600136638, y: .499999851}
+      border: {x: 0, y: 0, z: 0, w: 0}
+  spritePackingTag: 
+  userData: 

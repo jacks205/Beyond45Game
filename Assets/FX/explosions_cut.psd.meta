@@ -1,0 +1,917 @@
+fileFormatVersion: 2
+guid: 03af410a20941664e80b1a912d9db9ea
+TextureImporter:
+  fileIDToRecycleName:
+    21300000: explosions_cut
+    21300002: explosions_cut_1
+    21300004: explosions_cut_1a
+    21300006: explosions_cut_2
+    21300008: explosions_cut_3
+    21300010: explosions_cut_4
+    21300012: explosions_cut_5
+    21300014: explosions_cut_6
+    21300016: explosions_cut_7
+    21300018: explosions_cut_8
+    21300020: explosions_cut_9
+    21300022: explosions_cut_10
+    21300024: explosions_cut_11
+    21300026: explosions_cut_12
+    21300028: explosions_cut_13
+    21300030: explosions_cut_14
+    21300032: explosions_cut_15
+    21300034: explosions_cut_16
+    21300036: explosions_cut_17
+    21300038: explosions_cut_18
+    21300040: explosions_cut_19
+    21300042: explosions_cut_21
+    21300044: explosions_cut_22
+    21300046: explosions_cut_23
+    21300048: explosions_cut_24
+    21300050: explosions_cut_25
+    21300052: explosions_cut_23a
+    21300054: explosions_cut_27
+    21300056: explosions_cut_28
+    21300058: explosions_cut_29
+    21300060: explosions_cut_32
+    21300062: explosions_cut_31
+    21300064: explosions_cut_32a
+    21300066: explosions_cut_33
+    21300068: explosions_cut_34
+    21300070: explosions_cut_35
+    21300072: explosions_cut_36
+    21300074: explosions_cut_37
+    21300076: explosions_cut_38
+    21300078: explosions_cut_39
+    21300080: explosions_cut_40
+    21300082: explosions_cut_41
+    21300084: explosions_cut_42
+    21300086: explosions_cut_43
+    21300088: explosions_cut_44
+    21300090: explosions_cut_45
+    21300092: explosions_cut_46
+    21300094: explosions_cut_47
+    21300096: explosions_cut_48
+    21300098: explosions_cut_49
+    21300100: explosions_cut_50
+    21300102: explosions_cut_51
+    21300104: explosions_cut_51a
+    21300106: explosions_cut_55
+    21300108: explosions_cut_54
+    21300110: explosions_cut_55a
+    21300112: explosions_cut_56
+    21300114: explosions_cut_57
+    21300116: explosions_cut_58
+    21300118: explosions_cut_59
+    21300120: explosions_cut_60
+    21300122: explosions_cut_61
+    21300124: explosions_cut_62
+    21300126: explosions_cut_63
+    21300128: explosions_cut_64
+    21300130: explosions_cut_65
+    21300132: explosions_cut_66
+    21300134: explosions_cut_67
+    21300136: explosions_cut_68
+    21300138: explosions_cut_69
+    21300140: explosions_cut_70
+    21300142: explosions_cut_72
+    21300144: explosions_cut_73
+    21300146: explosions_cut_74
+    21300148: explosions_cut_79
+    21300150: explosions_cut_81
+    21300152: explosions_cut_82
+    21300154: explosions_cut_88
+    21300156: explosions_cut_81
+    21300158: explosions_cut_88a
+  serializedVersion: 2
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    linearTexture: 0
+    correctGamma: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: .25
+    normalMapFilter: 0
+  isReadable: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 0
+  seamlessCubemap: 0
+  textureFormat: -1
+  maxTextureSize: 4096
+  textureSettings:
+    filterMode: -1
+    aniso: 1
+    mipBias: -1
+    wrapMode: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: .5, y: .5}
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spritePixelsToUnits: 100
+  alphaIsTransparency: 1
+  textureType: 8
+  buildTargetSettings: []
+  spriteSheet:
+    sprites:
+    - name: explosions_cut_1
+      rect:
+        serializedVersion: 2
+        x: 74
+        y: 3314
+        width: 28
+        height: 26
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: explosions_cut_1a
+      rect:
+        serializedVersion: 2
+        x: 105
+        y: 3314
+        width: 30
+        height: 27
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: explosions_cut_2
+      rect:
+        serializedVersion: 2
+        x: 138
+        y: 3314
+        width: 31
+        height: 28
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: explosions_cut_3
+      rect:
+        serializedVersion: 2
+        x: 172
+        y: 3314
+        width: 30
+        height: 29
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: explosions_cut_4
+      rect:
+        serializedVersion: 2
+        x: 205
+        y: 3314
+        width: 30
+        height: 31
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: explosions_cut_5
+      rect:
+        serializedVersion: 2
+        x: 238
+        y: 3314
+        width: 30
+        height: 32
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: explosions_cut_6
+      rect:
+        serializedVersion: 2
+        x: 271
+        y: 3314
+        width: 30
+        height: 33
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: explosions_cut_7
+      rect:
+        serializedVersion: 2
+        x: 304
+        y: 3314
+        width: 30
+        height: 34
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: explosions_cut_8
+      rect:
+        serializedVersion: 2
+        x: 337
+        y: 3314
+        width: 30
+        height: 34
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: explosions_cut_9
+      rect:
+        serializedVersion: 2
+        x: 370
+        y: 3314
+        width: 30
+        height: 34
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: explosions_cut_10
+      rect:
+        serializedVersion: 2
+        x: 403
+        y: 3315
+        width: 29
+        height: 34
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: explosions_cut_11
+      rect:
+        serializedVersion: 2
+        x: 435
+        y: 3314
+        width: 30
+        height: 36
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: explosions_cut_12
+      rect:
+        serializedVersion: 2
+        x: 468
+        y: 3315
+        width: 29
+        height: 35
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: explosions_cut_13
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 3317
+        width: 28
+        height: 34
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: explosions_cut_14
+      rect:
+        serializedVersion: 2
+        x: 531
+        y: 3318
+        width: 26
+        height: 32
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: explosions_cut_15
+      rect:
+        serializedVersion: 2
+        x: 560
+        y: 3318
+        width: 25
+        height: 34
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: explosions_cut_16
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 3273
+        width: 26
+        height: 34
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: explosions_cut_17
+      rect:
+        serializedVersion: 2
+        x: 33
+        y: 3274
+        width: 25
+        height: 33
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: explosions_cut_18
+      rect:
+        serializedVersion: 2
+        x: 61
+        y: 3275
+        width: 23
+        height: 32
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: explosions_cut_19
+      rect:
+        serializedVersion: 2
+        x: 87
+        y: 3274
+        width: 22
+        height: 33
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: explosions_cut_21
+      rect:
+        serializedVersion: 2
+        x: 137
+        y: 3282
+        width: 22
+        height: 25
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: explosions_cut_22
+      rect:
+        serializedVersion: 2
+        x: 186
+        y: 3284
+        width: 18
+        height: 22
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: explosions_cut_23
+      rect:
+        serializedVersion: 2
+        x: 207
+        y: 3285
+        width: 16
+        height: 15
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: explosions_cut_24
+      rect:
+        serializedVersion: 2
+        x: 112
+        y: 3277
+        width: 22
+        height: 31
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: explosions_cut_25
+      rect:
+        serializedVersion: 2
+        x: 162
+        y: 3283
+        width: 21
+        height: 23
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: explosions_cut_23a
+      rect:
+        serializedVersion: 2
+        x: 226
+        y: 3285
+        width: 13
+        height: 14
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: explosions_cut_27
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 3153
+        width: 44
+        height: 47
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: explosions_cut_28
+      rect:
+        serializedVersion: 2
+        x: 51
+        y: 3153
+        width: 44
+        height: 47
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: explosions_cut_29
+      rect:
+        serializedVersion: 2
+        x: 98
+        y: 3153
+        width: 44
+        height: 47
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: explosions_cut_32
+      rect:
+        serializedVersion: 2
+        x: 106
+        y: 3220
+        width: 43
+        height: 34
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: explosions_cut_31
+      rect:
+        serializedVersion: 2
+        x: 145
+        y: 3153
+        width: 42
+        height: 47
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: explosions_cut_32a
+      rect:
+        serializedVersion: 2
+        x: 153
+        y: 3220
+        width: 46
+        height: 36
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: explosions_cut_33
+      rect:
+        serializedVersion: 2
+        x: 190
+        y: 3156
+        width: 41
+        height: 45
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: explosions_cut_34
+      rect:
+        serializedVersion: 2
+        x: 201
+        y: 3220
+        width: 44
+        height: 38
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: explosions_cut_35
+      rect:
+        serializedVersion: 2
+        x: 234
+        y: 3157
+        width: 41
+        height: 45
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: explosions_cut_36
+      rect:
+        serializedVersion: 2
+        x: 248
+        y: 3220
+        width: 46
+        height: 40
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: explosions_cut_37
+      rect:
+        serializedVersion: 2
+        x: 278
+        y: 3158
+        width: 39
+        height: 45
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: explosions_cut_38
+      rect:
+        serializedVersion: 2
+        x: 297
+        y: 3220
+        width: 44
+        height: 41
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: explosions_cut_39
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 3157
+        width: 38
+        height: 47
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: explosions_cut_40
+      rect:
+        serializedVersion: 2
+        x: 344
+        y: 3220
+        width: 47
+        height: 43
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: explosions_cut_41
+      rect:
+        serializedVersion: 2
+        x: 361
+        y: 3161
+        width: 35
+        height: 43
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: explosions_cut_42
+      rect:
+        serializedVersion: 2
+        x: 399
+        y: 3161
+        width: 35
+        height: 44
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: explosions_cut_43
+      rect:
+        serializedVersion: 2
+        x: 394
+        y: 3220
+        width: 47
+        height: 44
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: explosions_cut_44
+      rect:
+        serializedVersion: 2
+        x: 437
+        y: 3165
+        width: 33
+        height: 41
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: explosions_cut_45
+      rect:
+        serializedVersion: 2
+        x: 444
+        y: 3221
+        width: 45
+        height: 44
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: explosions_cut_46
+      rect:
+        serializedVersion: 2
+        x: 473
+        y: 3166
+        width: 37
+        height: 40
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: explosions_cut_47
+      rect:
+        serializedVersion: 2
+        x: 492
+        y: 3221
+        width: 45
+        height: 46
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: explosions_cut_48
+      rect:
+        serializedVersion: 2
+        x: 511
+        y: 3174
+        width: 28
+        height: 31
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: explosions_cut_49
+      rect:
+        serializedVersion: 2
+        x: 538
+        y: 3222
+        width: 47
+        height: 46
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: explosions_cut_50
+      rect:
+        serializedVersion: 2
+        x: 542
+        y: 3174
+        width: 30
+        height: 34
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: explosions_cut_51
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 3125
+        width: 28
+        height: 21
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: explosions_cut_51a
+      rect:
+        serializedVersion: 2
+        x: 35
+        y: 3128
+        width: 28
+        height: 17
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: explosions_cut_55
+      rect:
+        serializedVersion: 2
+        x: 172
+        y: 3043
+        width: 73
+        height: 60
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: explosions_cut_54
+      rect:
+        serializedVersion: 2
+        x: 245
+        y: 2954
+        width: 75
+        height: 80
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: explosions_cut_55a
+      rect:
+        serializedVersion: 2
+        x: 249
+        y: 3043
+        width: 77
+        height: 63
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: explosions_cut_56
+      rect:
+        serializedVersion: 2
+        x: 330
+        y: 3042
+        width: 78
+        height: 67
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: explosions_cut_57
+      rect:
+        serializedVersion: 2
+        x: 408
+        y: 3042
+        width: 84
+        height: 70
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: explosions_cut_58
+      rect:
+        serializedVersion: 2
+        x: 496
+        y: 3043
+        width: 79
+        height: 72
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: explosions_cut_59
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 2954
+        width: 79
+        height: 75
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: explosions_cut_60
+      rect:
+        serializedVersion: 2
+        x: 87
+        y: 2954
+        width: 75
+        height: 77
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: explosions_cut_61
+      rect:
+        serializedVersion: 2
+        x: 166
+        y: 2954
+        width: 75
+        height: 78
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: explosions_cut_62
+      rect:
+        serializedVersion: 2
+        x: 324
+        y: 2954
+        width: 79
+        height: 82
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: explosions_cut_63
+      rect:
+        serializedVersion: 2
+        x: 403
+        y: 2956
+        width: 74
+        height: 82
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: explosions_cut_64
+      rect:
+        serializedVersion: 2
+        x: 481
+        y: 2955
+        width: 74
+        height: 83
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: explosions_cut_65
+      rect:
+        serializedVersion: 2
+        x: 4
+        y: 2864
+        width: 74
+        height: 84
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: explosions_cut_66
+      rect:
+        serializedVersion: 2
+        x: 82
+        y: 2865
+        width: 74
+        height: 83
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: explosions_cut_67
+      rect:
+        serializedVersion: 2
+        x: 154
+        y: 2869
+        width: 70
+        height: 79
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: explosions_cut_68
+      rect:
+        serializedVersion: 2
+        x: 228
+        y: 2868
+        width: 67
+        height: 81
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: explosions_cut_69
+      rect:
+        serializedVersion: 2
+        x: 351
+        y: 2940
+        width: 6
+        height: 4
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: explosions_cut_70
+      rect:
+        serializedVersion: 2
+        x: 370
+        y: 2868
+        width: 63
+        height: 81
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: explosions_cut_72
+      rect:
+        serializedVersion: 2
+        x: 437
+        y: 2872
+        width: 58
+        height: 77
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: explosions_cut_73
+      rect:
+        serializedVersion: 2
+        x: 499
+        y: 2872
+        width: 57
+        height: 77
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: explosions_cut_74
+      rect:
+        serializedVersion: 2
+        x: 299
+        y: 2869
+        width: 67
+        height: 80
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: explosions_cut_79
+      rect:
+        serializedVersion: 2
+        x: 65
+        y: 2791
+        width: 55
+        height: 69
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: explosions_cut_81
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 2786
+        width: 56
+        height: 73
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: explosions_cut_82
+      rect:
+        serializedVersion: 2
+        x: 182
+        y: 2800
+        width: 49
+        height: 60
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: explosions_cut_88
+      rect:
+        serializedVersion: 2
+        x: 235
+        y: 2803
+        width: 47
+        height: 37
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: explosions_cut_81
+      rect:
+        serializedVersion: 2
+        x: 124
+        y: 2799
+        width: 54
+        height: 60
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+    - name: explosions_cut_88a
+      rect:
+        serializedVersion: 2
+        x: 286
+        y: 2809
+        width: 46
+        height: 33
+      alignment: 0
+      pivot: {x: .5, y: .5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+  spritePackingTag: 
+  userData: 

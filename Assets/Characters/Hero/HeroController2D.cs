@@ -15,10 +15,13 @@ public class HeroController2D : MonoBehaviour {
     public float jumpForce = 30;
     public HeroHealth2D health;
 
+    public float jumpTimeLimit = 1f;
+    float jumpTimer = 0;
+
+    bool isJumping = false;
     // Use this for initialization
     void Start () {
-//        anim = GetComponent<Animator>();
-//        health = GetComponent<HeroHealth2D>();
+
     }
     
     // Update is called once per frame
@@ -26,13 +29,11 @@ public class HeroController2D : MonoBehaviour {
         if (!health.isDead)
         {
             grounded = Physics2D.OverlapCircle(groundCheck.position, groundRadius, whatIsGround);
-            //      anim.SetBool ("Ground", grounded);
 
             float move = Input.GetAxis("Horizontal");
-//            Debug.Log(move);
+
             anim.SetFloat("Speed", Mathf.Abs(move));
-            //        SetRunningSpeed(Mathf.Abs (move));
-//            Debug.Log(rigidbody2D.velocity);
+
             rigidbody2D.velocity = new Vector2(move * MaxSpeed, rigidbody2D.velocity.y); 
             if (move > 0 && !FacingRight)
             {
@@ -43,22 +44,32 @@ public class HeroController2D : MonoBehaviour {
             }
         
             //Jumping down platform
-//        Physics2D.IgnoreLayerCollision( LayerMask.NameToLayer("Player"), LayerMask.NameToLayer("Platform"),!grounded || rigidbody2D.velocity.y > 0);
-//        float vertical = Input.GetAxis ("Vertical");
-//        if (grounded && vertical < -0.05) {
-//            Physics2D.IgnoreLayerCollision( LayerMask.NameToLayer("Player"), LayerMask.NameToLayer("Platform"), vertical < -0.05);
-//        }
+        Physics2D.IgnoreLayerCollision( LayerMask.NameToLayer("Player"), LayerMask.NameToLayer("Platform"),!grounded || rigidbody2D.velocity.y > 0);
+        float vertical = Input.GetAxis ("Vertical");
+        if (grounded && vertical < -0.05) {
+            Physics2D.IgnoreLayerCollision( LayerMask.NameToLayer("Player"), LayerMask.NameToLayer("Platform"), vertical < -0.05);
+        }
         }
     }
     
     void Update(){
         if (!health.isDead)
         {
-            if (grounded && Input.GetAxis("Jump") > 0)
-            {
-//                Debug.Log("Jump");
-                rigidbody2D.AddForce(new Vector2(0, jumpForce));
+            if(isJumping){
+                jumpTimer += Time.deltaTime;
             }
+            if(jumpTimer >= jumpTimeLimit){
+                jumpTimer = 0;
+                isJumping = false;
+            }
+
+            if(Input.GetAxis("Jump") > 0){
+                if(!isJumping && grounded){
+                    rigidbody2D.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
+                    isJumping = true;
+                }
+            }
+
         }
     }
     
@@ -68,10 +79,5 @@ public class HeroController2D : MonoBehaviour {
         theScale.x *= -1;
         transform.localScale = theScale;
     }
-    
-//    void SetRunningSpeed(float speed){
-//        legAnimator.SetFloat ("Speed", speed);
-//        upperBodyAnimator.SetFloat ("Speed", speed);
-//    }
-    
+
 }

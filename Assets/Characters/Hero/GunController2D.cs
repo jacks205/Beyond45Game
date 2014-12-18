@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 
 public class GunController2D : MonoBehaviour {
@@ -7,6 +7,7 @@ public class GunController2D : MonoBehaviour {
     public bool usingController = true;
 
     public Transform bullet;
+    public Transform rocket;
     public float bulletUpperAngle = 45f;
     public float bulletLowerAngle = 45f;
 
@@ -16,6 +17,7 @@ public class GunController2D : MonoBehaviour {
     
     public float bulletSpeed = 2f;
     public float shootingRate = 0.25f;
+    public float rocketRate = 0.12f;
     public float throwingRate = 0.5f;
     public Animator anim;
     float shootCooldown;
@@ -24,18 +26,21 @@ public class GunController2D : MonoBehaviour {
     public HeroHealth2D health;
     HeroController2D heroController2D;
 
+    bool hasRocket = false;
+    public float rocketTimer = 7f;
+    float rocketCooldown;
     public AmmoUIController ammoUIController;
+    public MachineGunUIController machineGunUIController;
     // Use this for initialization
     void Start () {
         Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("Player"), LayerMask.NameToLayer("Grenade"));
         Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("Player"), LayerMask.NameToLayer("Enemy"));
-//        Physics2D.IgnoreLayerCollision(LayerMask.NameToLayer("Player"), LayerMask.NameToLayer("AmmoBox"));
         anim = GetComponent<Animator> ();
         heroController2D = GetComponent<HeroController2D>();
         shootCooldown = 0f;
         throwCooldown = 0f;
+        rocketCooldown = 0f;
 //        health = GetComponent<HeroHealth2D>();
-//        anim.SetBool("hasRocket", true);
 
 
         PickUpGrenade();
@@ -54,6 +59,12 @@ public class GunController2D : MonoBehaviour {
                 shootCooldown -= Time.deltaTime;
             if (throwCooldown > 0)
                 throwCooldown -= Time.deltaTime;
+            if(hasRocket){
+                if(rocketCooldown > 0)
+                    rocketCooldown -=Time.deltaTime;
+                else
+                    SwitchToMG();
+            }
             float controllerDegrees = GetControllerAngle();
             CheckToShoot(controllerDegrees); 
             CheckToThrow();
@@ -69,52 +80,84 @@ public class GunController2D : MonoBehaviour {
                 Destroy(other.gameObject);
                 PickUpGrenade();
             }
+        } else if (other.name.Equals("RocketBox"))
+        {
+            if (!hasRocket)
+            {
+                SwitchToRocket();
+                machineGunUIController.ShowMachineGunIcon(this.rocketTimer);
+            }else{
+                rocketCooldown += rocketTimer; //Add additional time with the rocket
+            }
+            Destroy(other.gameObject);
         }
     }
 
     void CheckToShoot(float gunRotationDegrees){
 
-        if (CanAttack && isFiring())
+        if (CanShoot && isFiring())
         {
-            shootCooldown = shootingRate;
-            
+            shootCooldown = !hasRocket ? shootingRate : rocketRate;
             // Create a new shot
-            Transform shotTransform = Instantiate(bullet) as Transform;
-            
-            // Assign position
-            shotTransform.position = transform.position;
-            
-            // The is enemy property
-            ShotScript shot = shotTransform.gameObject.GetComponent<ShotScript>();
-            if (shot != null)
-            {
-//                shot.isEnemyShot = isEnemy;
-                shot.damage = 50f;
+//            anim.SetBool("isShooting", true);//Show Animation
+            Transform shotTransform;
+            if(!hasRocket){
+                shotTransform = Instantiate(bullet) as Transform;
+                anim.Play("shootingMachineGun");
+                Bullet2D shot = shotTransform.gameObject.GetComponent<Bullet2D>();
+                // Assign position
+                shotTransform.position = transform.position;
+                // Make the weapon shot always towards it
+                Vector2 direction = Vector2.right.Rotate(gunRotationDegrees);
+                if (shot != null)
+                {
+                    shot.damage =  (float)Random.Range(30, 70);
+                    if(heroController2D.FacingRight){
+                        shotTransform.Rotate(new Vector3(0,0,gunRotationDegrees));
+                        shot.direction = direction;
+                    }else{
+                        //                    SetBulletAngleAndVelocity(shotTransform, move, oppositeDirection, gunRotationDegreesOpposite);
+                        Vector2 angle180 = Vector2.right.Rotate(180f);
+                        shotTransform.Rotate(new Vector3(0,0,180f));
+                        shot.direction = angle180;
+                    }
+                    
+                }
+            }
+            else{
+                shotTransform = Instantiate(rocket) as Transform;
+                anim.Play("shootingRocket");
+                Rocket2D shot = shotTransform.gameObject.GetComponent<Rocket2D>();
+                // Assign position
+                shotTransform.position = transform.position;
+                // Make the weapon shot always towards it
+                Vector2 direction = Vector2.right.Rotate(gunRotationDegrees);
+                float gunRotationDegreesOpposite = 180 - gunRotationDegrees;
+//                   Vector2 oppositeDirection = Vector2.right.Rotate(gunRotationDegreesOpposite);
+                if (shot != null)
+                {
+                    shot.damage = 50f;
+                    if(heroController2D.FacingRight){
+                        shotTransform.Rotate(new Vector3(0,0,-gunRotationDegreesOpposite));
+                        shot.direction = direction;
+                    }else{
+                        //                    SetBulletAngleAndVelocity(shotTransform, move, oppositeDirection, gunRotationDegreesOpposite);
+                        Vector2 angle180 = Vector2.right.Rotate(180f);
+                        shotTransform.Rotate(new Vector3(0,0,0f));
+                        shot.direction = angle180;
+                    }
+                    
+                }
             }
 
-            // Make the weapon shot always towards it
-            BulletMove move = shotTransform.gameObject.GetComponent<BulletMove>();
-            Vector2 direction = Vector2.right.Rotate(gunRotationDegrees);
-//            float gunRotationDegreesOpposite = 180 - gunRotationDegrees;
-//            Vector2 oppositeDirection = Vector2.right.Rotate(gunRotationDegreesOpposite);
-            if (move != null)
-            {
-                if(heroController2D.FacingRight){
-                    SetBulletAngleAndVelocity(shotTransform, move, direction, gunRotationDegrees);
-                }else{
-//                    SetBulletAngleAndVelocity(shotTransform, move, oppositeDirection, gunRotationDegreesOpposite);
-                    Vector2 angle180 = Vector2.right.Rotate(180f);
-                    SetBulletAngleAndVelocity(shotTransform, move, angle180, 180f);
-                }
-                    
-            }
+
         }
     }
 
-    void SetBulletAngleAndVelocity(Transform obj, BulletMove move, Vector2 direction, float rotation){
-        obj.Rotate(new Vector3(0,0,rotation));
-        move.direction = direction; // towards in 2D space is the right of the sprite
-    }
+//    void SetBulletAngleAndVelocity(Transform obj, Bullet2D move, Vector2 direction, float rotation){
+//        obj.Rotate(new Vector3(0,0,rotation));
+//        move.direction = direction; // towards in 2D space is the right of the sprite
+//    }
      
     float GetControllerAngle(){
         float joystick4thAxis = Input.GetAxis ("Mouse X") * 10;
@@ -145,18 +188,27 @@ public class GunController2D : MonoBehaviour {
         }
     }
 
+    void SwitchToRocket()
+    {
+        anim.SetBool("hasRocket", true);
+        hasRocket = true;
+        rocketCooldown = rocketTimer;
+    }
+
+    void SwitchToMG()
+    {
+        anim.SetBool("hasRocket", false);
+        hasRocket = false;
+    }
+
 
     bool isFiring(){
         float fire1 = Input.GetAxis ("Fire1");
         if (fire1 == 1)
-        {
-            anim.SetBool("isShooting", true);//Show Animation
             return true;
-        } else
-        {
-            anim.SetBool("isShooting", false);//Show Animation
+         else
             return false;
-        }
+
     }
 
     bool isThrowingGrenade(){
@@ -186,7 +238,7 @@ public class GunController2D : MonoBehaviour {
 
     
     
-    public bool CanAttack
+    public bool CanShoot
     {
         get
         {
