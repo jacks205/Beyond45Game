@@ -11,7 +11,7 @@ Contents
 2. [Gameplay Mechanics] (#gameplaymechanics)
 3. [Controls] (#controls)
 4. [Interface] (#interface)
-5. [Menu and Screen Descriptions] (#menu)
+5. [Story] (#story)
 6. [Game World and Levels] (#gameworld)
 7. [Game Progression] (#progression)
 8. [Characters] (#characters)
@@ -73,19 +73,33 @@ Following Unity's [Xbox360 Controller Mapping](http://wiki.unity3d.com/images/a/
 5. Lives
   - Amount of lives the player has left until "Continue?"
 
-##<a name="menu"></a>Menu and Screen Descriptions
+##<a name="story"></a>Story
+You play as a commando who is fighting against the Germans and the Russians, since the Molotov–Ribbentrop Pact held and united Russia and Germany as allies. Which means Hitler wouldn't of overextended his forces into Russia, causing Germany to lose the war. Without the east to worry about, he focuses his attention to the west and south, successfully developing a foothold in the UK and Africa and prolonging the war past 1945. The story is inspired by my series, Red Alert, developed by Westwood Studios (pre-RA3 obviously).
 
 ##<a name="gameworld"></a>Game World and Levels
 
-Depends on story. Will most likely take place in an exotic location.
+Since this story is about post WW2, it can occur in locations world wide. Most likely locations might be more broad and international in beginning levels, ending towards levels getting closer and closer and within Germany and Russia.
+
+Levels will incorporate a more military-futuristic style, since these two heavy hitters of the world have top scientists building advanced weapon systems
 
 ##<a name="levels"></a>Levels
 
+As far as now, their are 2 levels without any story. First level incorporates a setting with Germany enemies, and the second incorporating Russian enemies.
+
+Future levels will be purposed with the story, ranging from metropolitan cities to advanced top secret military bases in the middle of nowhere.
+
+I greatly enjoyed the Commandos series by Pyro Studios and it would have a level development similar to that. In respect to cities, bases, and wilderness.
+
 ##<a name="progression"></a>Game Progression
+
+Progression would consist of getting through levels and accomplishing missions for the further development of the story. Some customization could be implemented but that is currently undecided. I am going for a Metal Slug-esque game which could go either way.
 
 ##<a name="characters"></a>Characters
 
+Main hero/commando that is general badass. Might be customizable in the future.
+
 ##<a name="enemies"></a>Enemies
+
 Typical bad guy army enemies that are clueless compared to yourself.
 
 ##<a name="weapons"></a>Weapons
@@ -103,6 +117,9 @@ Typical bad guy army enemies that are clueless compared to yourself.
 ##<a name="posts"></a>Weekly Blog Posts
 1. [Initial Panic](http://jacks205.blogspot.com/2014/09/week-1-initial-panic.html)
 2. [Not Much Panic](http://jacks205.blogspot.com/2014/09/week-2-not-much-panic.html)
+3. [Week 3: Who Do I Shoot?](http://jacks205.blogspot.com/2014/10/week-3-who-do-i-shoot.html)
+4. [Week 4: New Style and Progess!](http://jacks205.blogspot.com/2014/10/week-4-new-style-and-progess.html)
+5. [Week 11: New Levels and Better Features](http://jacks205.blogspot.com/2014/12/week-11-new-levels-and-better-features.html)
 
 ##<a name="futurefeatures"></a>Future Features
 
