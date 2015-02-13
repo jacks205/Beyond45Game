@@ -1,4 +1,4 @@
-ChapmanMetalSlug
+Beyond 45
 ================
 
 CPSC 340 2d Side Scroller Shooter
