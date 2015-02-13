@@ -106,6 +106,10 @@ Typical bad guy army enemies that are clueless compared to yourself.
 ![Item Drop](Assets/Ideas/item-bomb.gif)
 ![Grenades](Assets/Ideas/grenades.gif)
 
+Machine Gun - Main weapon that has infinite ammo
+Rocket Launcher - Launcher that deals splash damage and is a pick up for a limited time duration
+Grenade - Throwable grenade that is thrown in an arc in player direction. Deals splash damage.
+
 ##<a name="script"></a>Script
 
 ##<a name="scoring"></a>Scoring
