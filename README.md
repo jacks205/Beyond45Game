@@ -24,6 +24,9 @@ Contents
 15. [Weekly Blog Posts](#posts)
 16. [Future Features] (#futurefeatures)
 
+Team
+1. Mark Jackson, Lead Developer/Designer
+
 
 Version History
 ---------------------
