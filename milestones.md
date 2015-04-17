@@ -34,7 +34,7 @@ By March 13-20
 2. Server set up with ability to create and join games
   - Similar to a multiplayer COOP 
 
-By April 17
+By April 23
 
 1. Strengthen the ability of the server with features(TBD)
 2. Be able to play with another person
