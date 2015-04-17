@@ -46,4 +46,5 @@ By May 21(Finals)
 1. Expected Multiplayer experience
   - Not laggy/buggy
   - In game functions work with multiplayer (camera following, etc)
+  - UI for creating and joining games
 2. Testing Runs
