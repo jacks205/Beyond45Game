@@ -14,7 +14,7 @@ By March 13-20
 3. Explositon sprites sheets are designed
 4. Designs are in game with all animations
 
-By April 17
+By April 23
 
 1. Start design of both level backgrounds
 2. Interactable object designed and with sprite sheets
