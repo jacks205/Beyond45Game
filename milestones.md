@@ -47,4 +47,5 @@ By May 21(Finals)
   - Not laggy/buggy
   - In game functions work with multiplayer (camera following, etc)
   - UI for creating and joining games
+  - UI for in-game 2 players
 2. Testing Runs
